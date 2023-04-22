@@ -17,15 +17,15 @@ namespace Fundamentos.EstruturaCondicional
             Console.Write("Valor hora: ");
             double valorHora = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Recebe vale educação? S ou N: ");
+            Console.Write("Recebe vale educação? S/N: ");
             bool valeEducacao =
                 Console.ReadLine().ToLower().Trim() == "s" ? true : false;
 
-            Console.Write("Recebe auxilio passe? S ou N: ");
+            Console.Write("Recebe auxilio passe? S/N: ");
             bool recebeValeTransporte =
                 Console.ReadLine().ToLower().Trim() == "s" ? true : false;
 
-            Console.Write("Filhos menores de 5 anos? S ou N: ");
+            Console.Write("Filhos menores de 5 anos? S/N: ");
             bool recebeAuxilioCreche =
                 Console.ReadLine().ToLower().Trim() == "s" ? true : false;
 
