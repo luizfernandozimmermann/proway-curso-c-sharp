@@ -15,6 +15,7 @@ namespace Fundamentos.LacoRepeticao
 
             while (opcaoDesejada != "8001")
             {
+                Console.Clear();
                 Console.WriteLine("1 - Exemplo01\n2 - Exemplo02\n3 - Exemplo03\n8001 - Sair");
 
                 Console.Write("Opção: ");
@@ -28,9 +29,6 @@ namespace Fundamentos.LacoRepeticao
                     Exemplo03();
                 else if (opcaoDesejada != "8001")
                     Console.WriteLine("Opção inválida");
-                
-                Console.WriteLine("Aperte qualquer tecla para continuar...");
-                Console.ReadKey();
                 Console.Clear();
             }
         }
