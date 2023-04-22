@@ -1,0 +1,15 @@
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\bin\Debug\net6.0\Fundamentos.exe
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\bin\Debug\net6.0\Fundamentos.deps.json
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\bin\Debug\net6.0\Fundamentos.runtimeconfig.json
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\bin\Debug\net6.0\Fundamentos.dll
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\bin\Debug\net6.0\Fundamentos.pdb
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.csproj.AssemblyReference.cache
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.AssemblyInfoInputs.cache
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.AssemblyInfo.cs
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.csproj.CoreCompileInputs.cache
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.dll
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\refint\Fundamentos.dll
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.pdb
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\Fundamentos.genruntimeconfig.cache
+C:\Users\73672\Downloads\proway-curso-c-sharp-lc1-2023-04-main\Fundamentos\obj\Debug\net6.0\ref\Fundamentos.dll
