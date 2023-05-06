@@ -4,6 +4,7 @@ using Fundamentos.EstruturaCondicional;
 using Fundamentos.ExemploVetor;
 using Fundamentos.JogoVelha;
 using Fundamentos.LacoRepeticao;
+using Fundamentos.OrientacaoObjetos;
 
 // ApresentarDados01 executor = new ApresentarDados01();
 // executor.Executar();
@@ -20,5 +21,8 @@ using Fundamentos.LacoRepeticao;
 //LacoRepeticaoWhile executor = new LacoRepeticaoWhile();
 //executor.Executar();
 
-ExemploVetorComFor executor = new ExemploVetorComFor();
-executor.Executar();
+//Loja loja = new Loja();
+//loja.Executar();
+
+ListaColaboradoresIterativa executor = new ListaColaboradoresIterativa();
+executor.CalcularFolhasPagamento();
