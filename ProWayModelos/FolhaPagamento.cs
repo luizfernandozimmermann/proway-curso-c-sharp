@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsExemplos
+﻿namespace ProWayModelos
 {
-    internal class FolhaPagamento
+    public class FolhaPagamento
     {
         public string NomeColaborador;
         public double ValorHora;
