@@ -2,7 +2,6 @@
 using Fundamentos.EntradaDados;
 using Fundamentos.EstruturaCondicional;
 using Fundamentos.ExemploVetor;
-using Fundamentos.JogoVelha;
 using Fundamentos.LacoRepeticao;
 using Fundamentos.OrientacaoObjetos;
 
