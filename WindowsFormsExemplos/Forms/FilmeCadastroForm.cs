@@ -16,5 +16,19 @@ namespace WindowsFormsExemplos.Forms
         {
             InitializeComponent();
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxNome.Clear();
+            richTextBoxDescricao.Clear();
+            numericUpDownMinutos.Value = 0;
+            comboBoxCategoria.SelectedIndex = -1;
+            dateTimePickerDataLancamento.ResetText();
+            checkBoxOscar.Checked = false;
+            checkBoxEmmy.Checked = false;
+            checkBoxGrammy.Checked = false;
+            radioButtonFlopouNao.Checked = false;
+            radioButtonFlopouSim.Checked = false;
+        }
     }
 }
