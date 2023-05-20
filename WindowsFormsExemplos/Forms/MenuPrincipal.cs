@@ -28,5 +28,11 @@ namespace WindowsFormsExemplos.Forms
             ProdutoCadastroSimplificadoForm form = new ProdutoCadastroSimplificadoForm();
             form.ShowDialog();
         }
+
+        private void buttonCadastroFilmes_Click(object sender, EventArgs e)
+        {
+            FilmeCadastroForm form = new FilmeCadastroForm();
+            form.ShowDialog();
+        }
     }
 }

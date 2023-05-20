@@ -15,25 +15,24 @@ namespace WindowsFormsExemplos.Forms
     {
 
         private int indiceLinhaEdicao = -1;
+
         public ProdutoCadastroSimplificadoForm()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             Produto produto = new Produto();
+
             produto.Nome = textBoxNome.Text.Trim();
+            if (produto.Nome.Length < 3)
+            {
+                MessageBox.Show("Nome do produto deve conter pelo menos 3 letras.");
+                textBoxNome.ForeColor = Color.Red;
+                textBoxNome.Focus();
+                return;
+            }
 
             try
             {
@@ -50,7 +49,9 @@ namespace WindowsFormsExemplos.Forms
 
             try
             {
-                produto.ValorUnitario = Convert.ToDouble(textBoxPrecoUnitario.Text);
+                produto.ValorUnitario = Convert.ToDouble(
+                    textBoxPrecoUnitario.Text.Replace("R$", "").Trim()
+                    );
                 textBoxPrecoUnitario.ForeColor = Color.Black;
             }
             catch
@@ -83,7 +84,7 @@ namespace WindowsFormsExemplos.Forms
 
             LimparCampos();
         }
-        
+
         private void LimparCampos()
         {
             textBoxNome.Clear();
@@ -92,25 +93,40 @@ namespace WindowsFormsExemplos.Forms
             textBoxNome.Focus();
         }
 
-        private void textBoxNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma linha selecionada.");
+                return;
+            }
+
             int indiceLinhaSelecionada = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.Rows.RemoveAt(indiceLinhaSelecionada);
+
+            string nomeProduto = dataGridView1.Rows[indiceLinhaSelecionada].Cells[0].Value.ToString();
+            DialogResult resultado = MessageBox
+                .Show($"Deseja realmente apagar '{nomeProduto}'?", "AVISO", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+                dataGridView1.Rows.RemoveAt(indiceLinhaSelecionada);
+            }
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            indiceLinhaEdicao = dataGridView1.SelectedRows[0].Index;
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma linha selecionada.");
+                return;
+            }
 
+            indiceLinhaEdicao = dataGridView1.SelectedRows[0].Index;
+            
             string nome = dataGridView1.Rows[indiceLinhaEdicao].Cells[0].Value.ToString();
             string quantidade = dataGridView1.SelectedRows[indiceLinhaEdicao].Cells[1].Value.ToString();
             string valorUnitario = dataGridView1.SelectedRows[indiceLinhaEdicao].Cells[2].Value.ToString();
-            
+
             textBoxNome.Text = nome;
             textBoxQuantidade.Text = quantidade;
             textBoxPrecoUnitario.Text = valorUnitario;

@@ -3,6 +3,7 @@ using Fundamentos.EntradaDados;
 using Fundamentos.EstruturaCondicional;
 using Fundamentos.ExemploVetor;
 using Fundamentos.LacoRepeticao;
+using Fundamentos.Listas;
 using Fundamentos.OrientacaoObjetos;
 
 // ApresentarDados01 executor = new ApresentarDados01();
@@ -23,5 +24,11 @@ using Fundamentos.OrientacaoObjetos;
 //Loja loja = new Loja();
 //loja.Executar();
 
-ListaColaboradoresIterativa executor = new ListaColaboradoresIterativa();
-executor.CalcularFolhasPagamento();
+//ListaColaboradoresIterativa executor = new ListaColaboradoresIterativa();
+//executor.CalcularFolhasPagamento();
+
+//ListaTiposPrimitivos executor = new ListaTiposPrimitivos();
+//executor.Executar();
+
+ListaDeObjetos listaDeObjetos = new ListaDeObjetos();
+listaDeObjetos.Executar();
