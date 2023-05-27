@@ -114,9 +114,12 @@
             // numericUpDownMinutos
             // 
             numericUpDownMinutos.Location = new Point(812, 76);
+            numericUpDownMinutos.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+            numericUpDownMinutos.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownMinutos.Name = "numericUpDownMinutos";
             numericUpDownMinutos.Size = new Size(136, 23);
             numericUpDownMinutos.TabIndex = 2;
+            numericUpDownMinutos.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // textBoxNome
             // 
@@ -195,6 +198,7 @@
             // radioButtonFlopouNao
             // 
             radioButtonFlopouNao.AutoSize = true;
+            radioButtonFlopouNao.Checked = true;
             radioButtonFlopouNao.Location = new Point(968, 162);
             radioButtonFlopouNao.Name = "radioButtonFlopouNao";
             radioButtonFlopouNao.Size = new Size(47, 19);

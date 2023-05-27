@@ -13,7 +13,7 @@ namespace ProWayModelos
         public ushort Minutos { get; set; }
         public FilmeCategoria Categoria { get; set; }
         public bool VitoriaOscar { get; set; }
-        public bool VitoriaAmmy { get; set; }
+        public bool VitoriaEmmy { get; set; }
         public bool VitoriaGrammy { get; set; }
         public bool Flopou { get; set; }
         public DateTime DataLancamento { get; set; }
@@ -22,6 +22,9 @@ namespace ProWayModelos
 
     public enum FilmeCategoria
     {
-        
+        Acao,
+        Comedia,
+        Terror,
+        Suspense
     }
 }
