@@ -34,5 +34,11 @@ namespace WindowsFormsExemplos.Forms
             FilmeCadastroForm form = new FilmeCadastroForm();
             form.ShowDialog();
         }
+
+        private void buttonExercicio_Click(object sender, EventArgs e)
+        {
+            ExercicioForm form = new ExercicioForm();
+            form.ShowDialog();
+        }
     }
 }

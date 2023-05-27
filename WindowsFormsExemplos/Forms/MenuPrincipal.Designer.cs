@@ -31,6 +31,7 @@
             buttonFolhaPagamento = new Button();
             buttonCadastroSimplificadoProduto = new Button();
             buttonCadastroFilmes = new Button();
+            buttonExercicio = new Button();
             SuspendLayout();
             // 
             // buttonFolhaPagamento
@@ -63,11 +64,22 @@
             buttonCadastroFilmes.UseVisualStyleBackColor = true;
             buttonCadastroFilmes.Click += buttonCadastroFilmes_Click;
             // 
+            // buttonExercicio
+            // 
+            buttonExercicio.Location = new Point(553, 12);
+            buttonExercicio.Name = "buttonExercicio";
+            buttonExercicio.Size = new Size(191, 168);
+            buttonExercicio.TabIndex = 3;
+            buttonExercicio.Text = "Exercicio";
+            buttonExercicio.UseVisualStyleBackColor = true;
+            buttonExercicio.Click += buttonExercicio_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(758, 450);
+            Controls.Add(buttonExercicio);
             Controls.Add(buttonCadastroFilmes);
             Controls.Add(buttonCadastroSimplificadoProduto);
             Controls.Add(buttonFolhaPagamento);
@@ -82,5 +94,6 @@
         private Button buttonFolhaPagamento;
         private Button buttonCadastroSimplificadoProduto;
         private Button buttonCadastroFilmes;
+        private Button buttonExercicio;
     }
 }
