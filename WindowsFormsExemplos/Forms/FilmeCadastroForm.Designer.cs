@@ -59,6 +59,7 @@
             buttonEditar = new Button();
             labelQuantidadeValor = new Label();
             labelQuantidade = new Label();
+            labelCodigoEditar = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinutos).BeginInit();
             SuspendLayout();
@@ -73,6 +74,7 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowTemplate.Height = 25;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(669, 489);
             dataGridView.TabIndex = 0;
             // 
@@ -253,6 +255,7 @@
             buttonSalvar.TabIndex = 18;
             buttonSalvar.Text = "Salvar";
             buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // labelVitorias
             // 
@@ -298,6 +301,7 @@
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(318, 23);
             textBoxPesquisa.TabIndex = 23;
+            textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
             // 
             // buttonApagar
             // 
@@ -307,6 +311,7 @@
             buttonApagar.TabIndex = 24;
             buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // buttonEditar
             // 
@@ -316,6 +321,7 @@
             buttonEditar.TabIndex = 25;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // labelQuantidadeValor
             // 
@@ -335,11 +341,21 @@
             labelQuantidade.TabIndex = 27;
             labelQuantidade.Text = "Quantidade";
             // 
+            // labelCodigoEditar
+            // 
+            labelCodigoEditar.AutoSize = true;
+            labelCodigoEditar.Location = new Point(888, 9);
+            labelCodigoEditar.Name = "labelCodigoEditar";
+            labelCodigoEditar.Size = new Size(0, 15);
+            labelCodigoEditar.TabIndex = 28;
+            labelCodigoEditar.Visible = false;
+            // 
             // FilmeCadastroForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1247, 600);
+            Controls.Add(labelCodigoEditar);
             Controls.Add(labelQuantidade);
             Controls.Add(labelQuantidadeValor);
             Controls.Add(buttonEditar);
@@ -369,6 +385,7 @@
             Controls.Add(dataGridView);
             Name = "FilmeCadastroForm";
             Text = "FilmeCadastroForm";
+            Load += FilmeCadastroForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinutos).EndInit();
             ResumeLayout(false);
@@ -408,5 +425,6 @@
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnCategoria;
         private DataGridViewTextBoxColumn ColumnDuracao;
+        private Label labelCodigoEditar;
     }
 }
