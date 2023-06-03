@@ -30,12 +30,22 @@ namespace WindowsFormsExemplos.Forms
         {
             if (linkLabelRegistrar.Text == "Registrar")
             {
-                linkLabelRegistrar.Text = "Já possuo conta";
+                ResetarCampos();
             }
             else
             {
                 linkLabelRegistrar.Text = "Registrar";
+                buttonEntrar.Text = "Entrar";
             }
+        }
+
+        private void ResetarCampos()
+        {
+            linkLabelRegistrar.Text = "Já possuo conta";
+            buttonEntrar.Text = "Registrar";
+            textBoxUsuário.Text = "";
+            textBoxSenha.Text = "";
+            textBoxCorFav.Text = "";
         }
 
         private void ExercicioForm_Load(object sender, EventArgs e)
@@ -64,6 +74,68 @@ namespace WindowsFormsExemplos.Forms
             var registrosSerializados = JsonConvert.SerializeObject(registros);
 
             File.WriteAllText(caminhoArquivoJsonRegistrosDesktop, registrosSerializados);
+        }
+
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            var usuario = textBoxUsuário.Text;
+
+            if (usuario.Length < 3)
+            {
+                MessageBox.Show("Usuário inválido.");
+                return;
+            }
+
+            var senha = textBoxSenha.Text;
+
+            if (senha == "")
+            {
+                MessageBox.Show("Digite a senha.");
+                return;
+            }
+
+            var corFav = textBoxCorFav.Text;
+            if (corFav == "")
+            {
+                MessageBox.Show("Digite a cor favorita.");
+                return;
+            }
+
+            var registro = new Registro();
+            registro.Usuario = usuario;
+            registro.Senha = senha;
+            registro.CorFav = corFav;
+
+            if (buttonEntrar.Text == "Entrar")
+            {
+                for (int i = 0; i < registros.Count; i++)
+                {
+                    var registroLista = registros[i];
+                    if (registroLista.Usuario == registro.Usuario &&
+                        registroLista.Senha == registro.Senha &&
+                        registroLista.CorFav == registro.CorFav)
+                    {
+                        MessageBox.Show("Entrou!");
+                        return;
+                    }
+                }
+                MessageBox.Show("Usuário, senha ou Cor favorita errados.");
+                
+            }
+            else
+            {
+                for (int i = 0;i < registros.Count;i++)
+                {
+                    if (registros[i].Usuario == registro.Usuario)
+                    {
+                        MessageBox.Show("Usuário já existe");
+                        return;
+                    }
+                }
+                registros.Add(registro);
+                SalvarRegistros();
+                ResetarCampos();
+            }
         }
     }
 }

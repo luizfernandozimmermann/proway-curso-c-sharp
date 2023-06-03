@@ -32,7 +32,7 @@
             labelUsuario = new Label();
             textBoxSenha = new TextBox();
             labelSenha = new Label();
-            textBox3 = new TextBox();
+            textBoxCorFav = new TextBox();
             labelCorFav = new Label();
             linkLabelRegistrar = new LinkLabel();
             buttonEntrar = new Button();
@@ -72,12 +72,12 @@
             labelSenha.TabIndex = 4;
             labelSenha.Text = "Senha";
             // 
-            // textBox3
+            // textBoxCorFav
             // 
-            textBox3.Location = new Point(12, 144);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(279, 23);
-            textBox3.TabIndex = 7;
+            textBoxCorFav.Location = new Point(12, 144);
+            textBoxCorFav.Name = "textBoxCorFav";
+            textBoxCorFav.Size = new Size(279, 23);
+            textBoxCorFav.TabIndex = 7;
             // 
             // labelCorFav
             // 
@@ -107,6 +107,7 @@
             buttonEntrar.TabIndex = 9;
             buttonEntrar.Text = "Entrar";
             buttonEntrar.UseVisualStyleBackColor = true;
+            buttonEntrar.Click += buttonEntrar_Click;
             // 
             // ExercicioForm
             // 
@@ -115,7 +116,7 @@
             ClientSize = new Size(312, 259);
             Controls.Add(buttonEntrar);
             Controls.Add(linkLabelRegistrar);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxCorFav);
             Controls.Add(labelCorFav);
             Controls.Add(textBoxSenha);
             Controls.Add(labelSenha);
@@ -134,7 +135,7 @@
         private Label labelUsuario;
         private TextBox textBoxSenha;
         private Label labelSenha;
-        private TextBox textBox3;
+        private TextBox textBoxCorFav;
         private Label labelCorFav;
         private LinkLabel linkLabelRegistrar;
         private Button buttonEntrar;
