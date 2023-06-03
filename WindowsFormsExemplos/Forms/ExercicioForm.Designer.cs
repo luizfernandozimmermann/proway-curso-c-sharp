@@ -97,6 +97,7 @@
             linkLabelRegistrar.TabIndex = 8;
             linkLabelRegistrar.TabStop = true;
             linkLabelRegistrar.Text = "Registrar";
+            linkLabelRegistrar.TextAlign = ContentAlignment.MiddleCenter;
             linkLabelRegistrar.LinkClicked += linkLabelRegistrar_LinkClicked;
             // 
             // buttonEntrar

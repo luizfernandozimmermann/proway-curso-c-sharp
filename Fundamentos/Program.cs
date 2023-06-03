@@ -1,4 +1,5 @@
 ﻿using Fundamentos.ApresentarDados;
+using Fundamentos.BancoDados;
 using Fundamentos.EntradaDados;
 using Fundamentos.EstruturaCondicional;
 using Fundamentos.ExemploVetor;
@@ -30,5 +31,8 @@ using Fundamentos.OrientacaoObjetos;
 //ListaTiposPrimitivos executor = new ListaTiposPrimitivos();
 //executor.Executar();
 
-ListaDeObjetos listaDeObjetos = new ListaDeObjetos();
-listaDeObjetos.Executar();
+//ListaDeObjetos listaDeObjetos = new ListaDeObjetos();
+//listaDeObjetos.Executar();
+
+BancoDadosExemplo01 executor = new BancoDadosExemplo01();
+executor.Executar();

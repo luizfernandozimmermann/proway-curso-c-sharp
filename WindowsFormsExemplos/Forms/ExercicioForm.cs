@@ -120,11 +120,11 @@ namespace WindowsFormsExemplos.Forms
                     }
                 }
                 MessageBox.Show("Usuário, senha ou Cor favorita errados.");
-                
+
             }
             else
             {
-                for (int i = 0;i < registros.Count;i++)
+                for (int i = 0; i < registros.Count; i++)
                 {
                     if (registros[i].Usuario == registro.Usuario)
                     {

@@ -68,6 +68,7 @@
             // 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { ColumnCodigo, ColumnNome, ColumnCategoria, ColumnDuracao });
             dataGridView.Location = new Point(12, 58);
@@ -98,12 +99,14 @@
             // 
             // ColumnDuracao
             // 
+            ColumnDuracao.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColumnDuracao.HeaderText = "Duração";
             ColumnDuracao.Name = "ColumnDuracao";
             ColumnDuracao.ReadOnly = true;
             // 
             // labelNome
             // 
+            labelNome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelNome.AutoSize = true;
             labelNome.Location = new Point(812, 9);
             labelNome.Name = "labelNome";
@@ -113,6 +116,7 @@
             // 
             // numericUpDownMinutos
             // 
+            numericUpDownMinutos.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             numericUpDownMinutos.Location = new Point(812, 76);
             numericUpDownMinutos.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDownMinutos.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -123,6 +127,7 @@
             // 
             // textBoxNome
             // 
+            textBoxNome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBoxNome.Location = new Point(812, 27);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(423, 23);
@@ -130,6 +135,7 @@
             // 
             // comboBoxCategoria
             // 
+            comboBoxCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             comboBoxCategoria.FormattingEnabled = true;
             comboBoxCategoria.Location = new Point(969, 76);
             comboBoxCategoria.Name = "comboBoxCategoria";
@@ -138,6 +144,7 @@
             // 
             // labelMinutos
             // 
+            labelMinutos.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelMinutos.AutoSize = true;
             labelMinutos.Location = new Point(812, 58);
             labelMinutos.Name = "labelMinutos";
@@ -147,6 +154,7 @@
             // 
             // labelCategoria
             // 
+            labelCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelCategoria.AutoSize = true;
             labelCategoria.Location = new Point(969, 58);
             labelCategoria.Name = "labelCategoria";
@@ -156,6 +164,7 @@
             // 
             // checkBoxOscar
             // 
+            checkBoxOscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             checkBoxOscar.AutoSize = true;
             checkBoxOscar.Location = new Point(812, 137);
             checkBoxOscar.Name = "checkBoxOscar";
@@ -166,6 +175,7 @@
             // 
             // checkBoxEmmy
             // 
+            checkBoxEmmy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             checkBoxEmmy.AutoSize = true;
             checkBoxEmmy.Location = new Point(812, 162);
             checkBoxEmmy.Name = "checkBoxEmmy";
@@ -176,6 +186,7 @@
             // 
             // checkBoxGrammy
             // 
+            checkBoxGrammy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             checkBoxGrammy.AutoSize = true;
             checkBoxGrammy.Location = new Point(812, 187);
             checkBoxGrammy.Name = "checkBoxGrammy";
@@ -186,6 +197,7 @@
             // 
             // radioButtonFlopouSim
             // 
+            radioButtonFlopouSim.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioButtonFlopouSim.AutoSize = true;
             radioButtonFlopouSim.Location = new Point(968, 136);
             radioButtonFlopouSim.Name = "radioButtonFlopouSim";
@@ -197,6 +209,7 @@
             // 
             // radioButtonFlopouNao
             // 
+            radioButtonFlopouNao.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioButtonFlopouNao.AutoSize = true;
             radioButtonFlopouNao.Checked = true;
             radioButtonFlopouNao.Location = new Point(968, 162);
@@ -209,6 +222,7 @@
             // 
             // labelDescricao
             // 
+            labelDescricao.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelDescricao.AutoSize = true;
             labelDescricao.Location = new Point(812, 285);
             labelDescricao.Name = "labelDescricao";
@@ -218,6 +232,7 @@
             // 
             // richTextBoxDescricao
             // 
+            richTextBoxDescricao.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             richTextBoxDescricao.Location = new Point(812, 303);
             richTextBoxDescricao.Name = "richTextBoxDescricao";
             richTextBoxDescricao.Size = new Size(423, 213);
@@ -226,6 +241,7 @@
             // 
             // dateTimePickerDataLancamento
             // 
+            dateTimePickerDataLancamento.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dateTimePickerDataLancamento.Format = DateTimePickerFormat.Short;
             dateTimePickerDataLancamento.Location = new Point(812, 240);
             dateTimePickerDataLancamento.Name = "dateTimePickerDataLancamento";
@@ -234,6 +250,7 @@
             // 
             // labelDataLancamento
             // 
+            labelDataLancamento.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelDataLancamento.AutoSize = true;
             labelDataLancamento.Location = new Point(812, 222);
             labelDataLancamento.Name = "labelDataLancamento";
@@ -243,6 +260,7 @@
             // 
             // buttonCancelar
             // 
+            buttonCancelar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonCancelar.Location = new Point(812, 522);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(209, 66);
@@ -253,6 +271,7 @@
             // 
             // buttonSalvar
             // 
+            buttonSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSalvar.Location = new Point(1027, 522);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(208, 66);
@@ -263,6 +282,7 @@
             // 
             // labelVitorias
             // 
+            labelVitorias.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelVitorias.AutoSize = true;
             labelVitorias.Location = new Point(812, 119);
             labelVitorias.Name = "labelVitorias";
@@ -272,6 +292,7 @@
             // 
             // labelFlopou
             // 
+            labelFlopou.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelFlopou.AutoSize = true;
             labelFlopou.Location = new Point(968, 119);
             labelFlopou.Name = "labelFlopou";
@@ -292,6 +313,7 @@
             // 
             // labelPesquisa
             // 
+            labelPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelPesquisa.AutoSize = true;
             labelPesquisa.Location = new Point(467, 9);
             labelPesquisa.Name = "labelPesquisa";
@@ -301,6 +323,7 @@
             // 
             // textBoxPesquisa
             // 
+            textBoxPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBoxPesquisa.Location = new Point(467, 27);
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(318, 23);
@@ -309,6 +332,7 @@
             // 
             // buttonApagar
             // 
+            buttonApagar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonApagar.Location = new Point(687, 58);
             buttonApagar.Name = "buttonApagar";
             buttonApagar.Size = new Size(98, 55);
@@ -319,6 +343,7 @@
             // 
             // buttonEditar
             // 
+            buttonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonEditar.Location = new Point(687, 119);
             buttonEditar.Name = "buttonEditar";
             buttonEditar.Size = new Size(98, 55);
@@ -329,6 +354,7 @@
             // 
             // labelQuantidadeValor
             // 
+            labelQuantidadeValor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelQuantidadeValor.AutoSize = true;
             labelQuantidadeValor.Location = new Point(657, 564);
             labelQuantidadeValor.Name = "labelQuantidadeValor";
@@ -338,6 +364,7 @@
             // 
             // labelQuantidade
             // 
+            labelQuantidade.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelQuantidade.AutoSize = true;
             labelQuantidade.Location = new Point(582, 564);
             labelQuantidade.Name = "labelQuantidade";
@@ -347,6 +374,7 @@
             // 
             // labelCodigoEditar
             // 
+            labelCodigoEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelCodigoEditar.AutoSize = true;
             labelCodigoEditar.Location = new Point(888, 9);
             labelCodigoEditar.Name = "labelCodigoEditar";
@@ -425,10 +453,10 @@
         private Button buttonEditar;
         private Label labelQuantidadeValor;
         private Label labelQuantidade;
+        private Label labelCodigoEditar;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnCategoria;
         private DataGridViewTextBoxColumn ColumnDuracao;
-        private Label labelCodigoEditar;
     }
 }

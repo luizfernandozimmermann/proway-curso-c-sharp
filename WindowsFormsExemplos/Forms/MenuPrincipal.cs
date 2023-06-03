@@ -40,5 +40,11 @@ namespace WindowsFormsExemplos.Forms
             ExercicioForm form = new ExercicioForm();
             form.ShowDialog();
         }
+
+        private void buttonFormBancoDados_Click(object sender, EventArgs e)
+        {
+            var form = new ProdutoCadastroSimplificadoBancoDadosForm();
+            form.ShowDialog();
+        }
     }
 }
