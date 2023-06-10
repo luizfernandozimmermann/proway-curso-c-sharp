@@ -53,7 +53,6 @@
             this.textboxNome.Name = "textboxNome";
             this.textboxNome.Size = new System.Drawing.Size(344, 23);
             this.textboxNome.TabIndex = 1;
-            this.textboxNome.TextChanged += new System.EventHandler(this.textboxNome_TextChanged);
             // 
             // label2
             // 
@@ -99,7 +98,6 @@
             this.button1.Text = "Calcular salário";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            this.button1.Move += new System.EventHandler(this.button1_Move);
             // 
             // Form1
             // 

@@ -54,63 +54,78 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnQuantidade, ColumnPrecoUnitario, ColumnPreco });
-            dataGridView1.Location = new Point(12, 43);
+            dataGridView1.Location = new Point(14, 57);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(609, 358);
+            dataGridView1.Size = new Size(696, 477);
             dataGridView1.TabIndex = 19;
             // 
             // ColumnId
             // 
             ColumnId.HeaderText = "Código";
+            ColumnId.MinimumWidth = 6;
             ColumnId.Name = "ColumnId";
             ColumnId.ReadOnly = true;
+            ColumnId.Width = 125;
             // 
             // ColumnNome
             // 
             ColumnNome.HeaderText = "Nome";
+            ColumnNome.MinimumWidth = 6;
             ColumnNome.Name = "ColumnNome";
             ColumnNome.ReadOnly = true;
+            ColumnNome.Width = 125;
             // 
             // ColumnQuantidade
             // 
             ColumnQuantidade.HeaderText = "Quantidade";
+            ColumnQuantidade.MinimumWidth = 6;
             ColumnQuantidade.Name = "ColumnQuantidade";
             ColumnQuantidade.ReadOnly = true;
+            ColumnQuantidade.Width = 125;
             // 
             // ColumnPrecoUnitario
             // 
             ColumnPrecoUnitario.HeaderText = "Preço unitário";
+            ColumnPrecoUnitario.MinimumWidth = 6;
             ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
             ColumnPrecoUnitario.ReadOnly = true;
+            ColumnPrecoUnitario.Width = 125;
             // 
             // ColumnPreco
             // 
             ColumnPreco.HeaderText = "Preço";
+            ColumnPreco.MinimumWidth = 6;
             ColumnPreco.Name = "ColumnPreco";
             ColumnPreco.ReadOnly = true;
+            ColumnPreco.Width = 125;
             // 
             // textBoxPrecoUnitario
             // 
-            textBoxPrecoUnitario.Location = new Point(627, 208);
+            textBoxPrecoUnitario.Location = new Point(717, 277);
+            textBoxPrecoUnitario.Margin = new Padding(3, 4, 3, 4);
             textBoxPrecoUnitario.Name = "textBoxPrecoUnitario";
-            textBoxPrecoUnitario.Size = new Size(248, 23);
+            textBoxPrecoUnitario.Size = new Size(283, 27);
             textBoxPrecoUnitario.TabIndex = 16;
             // 
             // textBoxQuantidade
             // 
-            textBoxQuantidade.Location = new Point(627, 138);
+            textBoxQuantidade.Location = new Point(717, 184);
+            textBoxQuantidade.Margin = new Padding(3, 4, 3, 4);
             textBoxQuantidade.Name = "textBoxQuantidade";
-            textBoxQuantidade.Size = new Size(248, 23);
+            textBoxQuantidade.Size = new Size(283, 27);
             textBoxQuantidade.TabIndex = 14;
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(627, 70);
+            textBoxNome.Location = new Point(717, 93);
+            textBoxNome.Margin = new Padding(3, 4, 3, 4);
             textBoxNome.Name = "textBoxNome";
-            textBoxNome.Size = new Size(248, 23);
+            textBoxNome.Size = new Size(283, 27);
             textBoxNome.TabIndex = 12;
             // 
             // buttonSalvar
@@ -118,9 +133,10 @@
             buttonSalvar.BackgroundImageLayout = ImageLayout.None;
             buttonSalvar.Image = Properties.Resources.disk;
             buttonSalvar.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonSalvar.Location = new Point(678, 287);
+            buttonSalvar.Location = new Point(775, 383);
+            buttonSalvar.Margin = new Padding(3, 4, 3, 4);
             buttonSalvar.Name = "buttonSalvar";
-            buttonSalvar.Size = new Size(151, 51);
+            buttonSalvar.Size = new Size(173, 68);
             buttonSalvar.TabIndex = 18;
             buttonSalvar.Text = "Salvar";
             buttonSalvar.UseVisualStyleBackColor = true;
@@ -129,53 +145,56 @@
             // labelPrecoUnitario
             // 
             labelPrecoUnitario.AutoSize = true;
-            labelPrecoUnitario.Location = new Point(627, 190);
+            labelPrecoUnitario.Location = new Point(717, 253);
             labelPrecoUnitario.Name = "labelPrecoUnitario";
-            labelPrecoUnitario.Size = new Size(81, 15);
+            labelPrecoUnitario.Size = new Size(101, 20);
             labelPrecoUnitario.TabIndex = 17;
             labelPrecoUnitario.Text = "Preço unitário";
             // 
             // labelQuantidade
             // 
             labelQuantidade.AutoSize = true;
-            labelQuantidade.Location = new Point(627, 120);
+            labelQuantidade.Location = new Point(717, 160);
             labelQuantidade.Name = "labelQuantidade";
-            labelQuantidade.Size = new Size(69, 15);
+            labelQuantidade.Size = new Size(87, 20);
             labelQuantidade.TabIndex = 15;
             labelQuantidade.Text = "Quantidade";
             // 
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Location = new Point(627, 52);
+            labelNome.Location = new Point(717, 69);
             labelNome.Name = "labelNome";
-            labelNome.Size = new Size(40, 15);
+            labelNome.Size = new Size(50, 20);
             labelNome.TabIndex = 13;
             labelNome.Text = "Nome";
             // 
             // labelListaProdutos
             // 
             labelListaProdutos.AutoSize = true;
-            labelListaProdutos.Location = new Point(12, 11);
+            labelListaProdutos.Location = new Point(14, 15);
             labelListaProdutos.Name = "labelListaProdutos";
-            labelListaProdutos.Size = new Size(98, 15);
+            labelListaProdutos.Size = new Size(123, 20);
             labelListaProdutos.TabIndex = 11;
             labelListaProdutos.Text = "Lista de Produtos";
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(465, 11);
+            buttonEditar.Location = new Point(531, 15);
+            buttonEditar.Margin = new Padding(3, 4, 3, 4);
             buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(75, 23);
+            buttonEditar.Size = new Size(86, 31);
             buttonEditar.TabIndex = 21;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
-            buttonApagar.Location = new Point(546, 11);
+            buttonApagar.Location = new Point(624, 15);
+            buttonApagar.Margin = new Padding(3, 4, 3, 4);
             buttonApagar.Name = "buttonApagar";
-            buttonApagar.Size = new Size(75, 23);
+            buttonApagar.Size = new Size(86, 31);
             buttonApagar.TabIndex = 20;
             buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
@@ -183,10 +202,10 @@
             // 
             // ProdutoCadastroSimplificadoBancoDadosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(885, 415);
+            ClientSize = new Size(1011, 553);
             Controls.Add(dataGridView1);
             Controls.Add(textBoxPrecoUnitario);
             Controls.Add(textBoxQuantidade);
@@ -198,6 +217,7 @@
             Controls.Add(labelListaProdutos);
             Controls.Add(buttonEditar);
             Controls.Add(buttonApagar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ProdutoCadastroSimplificadoBancoDadosForm";
             Text = "ProdutoCadastroSimplificadoBancoDadosForm";
             Load += ProdutoCadastroSimplificadoBancoDadosForm_Load;

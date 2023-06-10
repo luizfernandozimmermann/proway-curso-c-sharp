@@ -15,6 +15,7 @@ namespace WindowsFormsExemplos.Forms
 {
     public partial class ProdutoCadastroSimplificadoBancoDadosForm : Form
     {
+        int idParaEditar = -1;
         public ProdutoCadastroSimplificadoBancoDadosForm()
         {
             InitializeComponent();
@@ -53,6 +54,45 @@ namespace WindowsFormsExemplos.Forms
             var quantidade = Convert.ToInt32(textBoxQuantidade.Text.Trim());
             var precoUnitario = Convert.ToDouble(textBoxPrecoUnitario.Text.Trim());
 
+            if (idParaEditar == -1)
+            {
+                Cadastrar(nome, quantidade, precoUnitario);
+            }
+            else
+            {
+                Editar(nome, quantidade, precoUnitario);
+            }
+            ListarProdutos();
+            LimparCampos();
+        }
+
+        private void Editar(string nome, int quantidade, double precoUnitario)
+        {
+            var comando = Conectar();
+            comando.CommandText = @"UPDATE produtos SET
+                    nome = @NOME,
+                    quantidade = @QUANTIDADE,
+                    preco_unitario = @PRECO_UNITARIO
+                    WHERE id = @ID";
+
+            comando.Parameters.AddWithValue("@NOME", nome);
+            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
+            comando.Parameters.AddWithValue("@ID", idParaEditar);
+            comando.ExecuteNonQuery();
+            MessageBox.Show("Editado com sucesso!");
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNome.Text = "";
+            textBoxQuantidade.Text = "";
+            textBoxPrecoUnitario.Text = "";
+            idParaEditar = -1;
+        }
+
+        private void Cadastrar(string nome, int quantidade, double precoUnitario)
+        {
             var comando = Conectar();
             comando.CommandText = $@"INSERT INTO
                 produtos (nome, preco_unitario, quantidade)
@@ -64,13 +104,12 @@ namespace WindowsFormsExemplos.Forms
 
             comando.ExecuteNonQuery();
             MessageBox.Show("Produto Cadastrado com sucesso");
-            ListarProdutos();
         }
 
         private SqlCommand Conectar()
         {
             var conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\73672\Desktop\proway-curso-c-sharp\WindowsFormsExemplos\BancoDados\WindowsFormsBancoDados.mdf;Integrated Security=True";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Luiz Fernando\Desktop\programacao\C#\proway-curso-c-sharp\WindowsFormsExemplos\BancoDados\WindowsFormsBancoDados.mdf"";Integrated Security=True";
             conexao.Open();
 
             var comando = conexao.CreateCommand();
@@ -94,6 +133,16 @@ namespace WindowsFormsExemplos.Forms
 
             MessageBox.Show("Produto apagado com sucesso.");
             ListarProdutos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            idParaEditar = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            textBoxNome.Text = linhaSelecionada.Cells[1].Value.ToString();
+            textBoxQuantidade.Text = linhaSelecionada.Cells[2].Value.ToString();
+            textBoxPrecoUnitario.Text = linhaSelecionada.Cells[3].Value.ToString();
         }
     }
 }

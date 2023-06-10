@@ -19,5 +19,14 @@
     <Compile Update="Forms\ProdutoCadastroSimplificadoForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Produtos\CadastroProdutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Produtos\ListagemProdutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Repositorios\ProdutoRepositorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
