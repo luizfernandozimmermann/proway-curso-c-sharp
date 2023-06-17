@@ -8,8 +8,10 @@ namespace Fundamentos.OrientacaoObjetos
 {
     internal class Computador
     {
+        // Propriedades
         public string Processador;
         public string PlacaVideo;
         public double Preco;
+        public IList<string> Nomes;
     }
 }

@@ -73,9 +73,9 @@ namespace WindowsFormsExemplos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gato {
+        internal static System.Drawing.Bitmap plano_de_fundo {
             get {
-                object obj = ResourceManager.GetObject("gato", resourceCulture);
+                object obj = ResourceManager.GetObject("plano_de_fundo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

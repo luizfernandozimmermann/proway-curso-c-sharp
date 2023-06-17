@@ -31,8 +31,7 @@
             buttonFolhaPagamento = new Button();
             buttonCadastroSimplificadoProduto = new Button();
             buttonCadastroFilmes = new Button();
-            buttonExercicio = new Button();
-            buttonFormBancoDados = new Button();
+            buttonCadastroSimplificadoProdutoBancoDados = new Button();
             buttonListaProdutos = new Button();
             SuspendLayout();
             // 
@@ -41,7 +40,7 @@
             buttonFolhaPagamento.Location = new Point(14, 16);
             buttonFolhaPagamento.Margin = new Padding(3, 4, 3, 4);
             buttonFolhaPagamento.Name = "buttonFolhaPagamento";
-            buttonFolhaPagamento.Size = new Size(198, 224);
+            buttonFolhaPagamento.Size = new Size(166, 180);
             buttonFolhaPagamento.TabIndex = 0;
             buttonFolhaPagamento.Text = "Folha Pagamento";
             buttonFolhaPagamento.UseVisualStyleBackColor = true;
@@ -49,10 +48,10 @@
             // 
             // buttonCadastroSimplificadoProduto
             // 
-            buttonCadastroSimplificadoProduto.Location = new Point(218, 16);
+            buttonCadastroSimplificadoProduto.Location = new Point(186, 16);
             buttonCadastroSimplificadoProduto.Margin = new Padding(3, 4, 3, 4);
             buttonCadastroSimplificadoProduto.Name = "buttonCadastroSimplificadoProduto";
-            buttonCadastroSimplificadoProduto.Size = new Size(191, 224);
+            buttonCadastroSimplificadoProduto.Size = new Size(163, 180);
             buttonCadastroSimplificadoProduto.TabIndex = 1;
             buttonCadastroSimplificadoProduto.Text = "Cadastro Simplificado Produto";
             buttonCadastroSimplificadoProduto.UseVisualStyleBackColor = true;
@@ -60,45 +59,31 @@
             // 
             // buttonCadastroFilmes
             // 
-            buttonCadastroFilmes.Location = new Point(416, 16);
-            buttonCadastroFilmes.Margin = new Padding(3, 4, 3, 4);
+            buttonCadastroFilmes.Location = new Point(355, 16);
             buttonCadastroFilmes.Name = "buttonCadastroFilmes";
-            buttonCadastroFilmes.Size = new Size(209, 224);
+            buttonCadastroFilmes.Size = new Size(171, 180);
             buttonCadastroFilmes.TabIndex = 2;
-            buttonCadastroFilmes.Text = "Cadastro de filmes";
+            buttonCadastroFilmes.Text = "Cadastro Filmes";
             buttonCadastroFilmes.UseVisualStyleBackColor = true;
             buttonCadastroFilmes.Click += buttonCadastroFilmes_Click;
             // 
-            // buttonExercicio
+            // buttonCadastroSimplificadoProdutoBancoDados
             // 
-            buttonExercicio.Location = new Point(632, 16);
-            buttonExercicio.Margin = new Padding(3, 4, 3, 4);
-            buttonExercicio.Name = "buttonExercicio";
-            buttonExercicio.Size = new Size(218, 224);
-            buttonExercicio.TabIndex = 3;
-            buttonExercicio.Text = "Exercicio";
-            buttonExercicio.UseVisualStyleBackColor = true;
-            buttonExercicio.Click += buttonExercicio_Click;
-            // 
-            // buttonFormBancoDados
-            // 
-            buttonFormBancoDados.Location = new Point(14, 248);
-            buttonFormBancoDados.Margin = new Padding(3, 4, 3, 4);
-            buttonFormBancoDados.Name = "buttonFormBancoDados";
-            buttonFormBancoDados.Size = new Size(198, 224);
-            buttonFormBancoDados.TabIndex = 4;
-            buttonFormBancoDados.Text = "Banco de dados";
-            buttonFormBancoDados.UseVisualStyleBackColor = true;
-            buttonFormBancoDados.Click += buttonFormBancoDados_Click;
+            buttonCadastroSimplificadoProdutoBancoDados.Location = new Point(542, 16);
+            buttonCadastroSimplificadoProdutoBancoDados.Name = "buttonCadastroSimplificadoProdutoBancoDados";
+            buttonCadastroSimplificadoProdutoBancoDados.Size = new Size(171, 180);
+            buttonCadastroSimplificadoProdutoBancoDados.TabIndex = 3;
+            buttonCadastroSimplificadoProdutoBancoDados.Text = "Cadastro Simplificado Produto Bando Dados";
+            buttonCadastroSimplificadoProdutoBancoDados.UseVisualStyleBackColor = true;
+            buttonCadastroSimplificadoProdutoBancoDados.Click += buttonCadastroSimplificadoProdutoBancoDados_Click;
             // 
             // buttonListaProdutos
             // 
-            buttonListaProdutos.Location = new Point(218, 248);
-            buttonListaProdutos.Margin = new Padding(3, 4, 3, 4);
+            buttonListaProdutos.Location = new Point(9, 398);
             buttonListaProdutos.Name = "buttonListaProdutos";
-            buttonListaProdutos.Size = new Size(198, 224);
-            buttonListaProdutos.TabIndex = 5;
-            buttonListaProdutos.Text = "Lista de produtos";
+            buttonListaProdutos.Size = new Size(171, 180);
+            buttonListaProdutos.TabIndex = 4;
+            buttonListaProdutos.Text = "Lista de Produtos";
             buttonListaProdutos.UseVisualStyleBackColor = true;
             buttonListaProdutos.Click += buttonListaProdutos_Click;
             // 
@@ -106,10 +91,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(866, 600);
+            ClientSize = new Size(914, 600);
             Controls.Add(buttonListaProdutos);
-            Controls.Add(buttonFormBancoDados);
-            Controls.Add(buttonExercicio);
+            Controls.Add(buttonCadastroSimplificadoProdutoBancoDados);
             Controls.Add(buttonCadastroFilmes);
             Controls.Add(buttonCadastroSimplificadoProduto);
             Controls.Add(buttonFolhaPagamento);
@@ -125,8 +109,7 @@
         private Button buttonFolhaPagamento;
         private Button buttonCadastroSimplificadoProduto;
         private Button buttonCadastroFilmes;
-        private Button buttonExercicio;
-        private Button buttonFormBancoDados;
+        private Button buttonCadastroSimplificadoProdutoBancoDados;
         private Button buttonListaProdutos;
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalSimples
+    internal class EstruturaCondicionalSimples : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             int idade = 10;
             if (idade < 18)
@@ -20,15 +20,15 @@ namespace Fundamentos.EstruturaCondicional
                 Console.WriteLine("Maior de idade");
             }
 
-                //if idade < 18:
+            // python
+            //if idade < 18:
             //    print("Menor de idade")
             //else:
             //    print("Maior de idade");
             // Java
             //if(idade < 18) {
             //    System.out.println("Menor de idade");
-            //} else {
-            //    System.out.println("Maior de idade");
+            //} else {            //    System.out.println("Maior de idade");
             //}
 
 
@@ -55,8 +55,6 @@ namespace Fundamentos.EstruturaCondicional
             }
             double salarioNovo = salario + aumento;
             Console.WriteLine("Novo salário: " + salarioNovo);
-
-
 
         }
     }

@@ -6,40 +6,43 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalAnd
+    internal class EstruturaCondicionalAnd : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
-            double peso = 80;
-            double altura = 1.76;
-            double imc = peso / Math.Pow(altura, 2);
-            bool a = true || false;
-            string textoIMC = "";
+            //double imc = peso / altura * altura;
+            double peso = 128.00; double altura = 1.70;
+            double imc = peso / Math.Pow(altura, 2); string textoImc = "";
+            // Tabela verdade E
+            // V e V => V
+            // V e F => F
+            // F e V => F
+            // F e F => F
             if (imc < 18.5)
             {
-                textoIMC = "Abaixo do peso";
+                textoImc = "Abaixo do peso";
             }
-            else if (imc < 25)
+            else if (imc >= 18.5 && imc < 25.00 && imc != 20)
             {
-                textoIMC = "Peso ideal";
+                textoImc = "Peso ideal";
             }
-            else if (imc < 30)
+            else if (imc >= 25.00 && imc < 30)
             {
-                textoIMC = "Levemente acima do peso";
+                textoImc = "Levemente acima do peso";
             }
-            else if (imc < 35)
+            else if (imc >= 30 && imc < 35)
             {
-                textoIMC = "Obesidade I";
+                textoImc = "Obesidade I";
             }
-            else if (imc <= 40)
+            else if (imc >= 35 && imc <= 40)
             {
-                textoIMC = "Obesidade II";
+                textoImc = "Obesidade II";
             }
             else
             {
-                textoIMC = "Obesidade III";
+                textoImc = "Obesidade III";
             }
-            Console.WriteLine(textoIMC);
+            Console.WriteLine("IMC: " + textoImc);
         }
     }
 }

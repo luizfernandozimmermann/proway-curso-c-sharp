@@ -13,16 +13,14 @@ namespace Fundamentos.OrientacaoObjetos
             FolhaPagamento folhaPagamento = new FolhaPagamento();
             Console.Write("Nome: ");
             folhaPagamento.NomeColaborador = Console.ReadLine().Trim();
-
-            Console.Write("Quantidade horas: ");
+            Console.Write("Quantidade de horas: ");
             folhaPagamento.QuantidadeHoras = Convert.ToInt32(Console.ReadLine());
-
             Console.Write("Valor hora: ");
             folhaPagamento.ValorHora = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine($@"Folha pagamento {folhaPagamento.NomeColaborador}
-Salário bruto: {folhaPagamento.CalcularSalarioBruto()}
-Valor hora: {folhaPagamento.ValorHora}");
+            Console.WriteLine($@"Folha de pagamento {folhaPagamento.NomeColaborador}
+Salário Bruto: {folhaPagamento.CalcularSalarioBruto()}
+INSS: {folhaPagamento.CalcularInss()}");
         }
     }
 }

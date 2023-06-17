@@ -20,8 +20,9 @@ namespace WindowsFormsExemplos.Forms
 
         private void buttonFolhaPagamento_Click(object sender, EventArgs e)
         {
+            // <NomeClasse> <nomeObjeto> = new <NomeClasse>();
             Form1 folhaPagamentoForm = new Form1();
-            folhaPagamentoForm.ShowDialog();
+            folhaPagamentoForm.Show();
         }
 
         private void buttonCadastroSimplificadoProduto_Click(object sender, EventArgs e)
@@ -36,15 +37,9 @@ namespace WindowsFormsExemplos.Forms
             form.ShowDialog();
         }
 
-        private void buttonExercicio_Click(object sender, EventArgs e)
+        private void buttonCadastroSimplificadoProdutoBancoDados_Click(object sender, EventArgs e)
         {
-            ExercicioForm form = new ExercicioForm();
-            form.ShowDialog();
-        }
-
-        private void buttonFormBancoDados_Click(object sender, EventArgs e)
-        {
-            var form = new ProdutoCadastroSimplificadoBancoDadosForm();
+            var form = new ProdutoCadastroSimplicadoBancoDadosForm();
             form.ShowDialog();
         }
 

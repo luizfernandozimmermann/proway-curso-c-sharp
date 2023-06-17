@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fundamentos.OrientacaoObjetos
+﻿namespace Fundamentos.OrientacaoObjetos
 {
     internal class FolhaPagamento
     {
+        // Propriedades
         public string NomeColaborador;
         public double ValorHora;
         public int QuantidadeHoras;
@@ -34,6 +29,7 @@ namespace Fundamentos.OrientacaoObjetos
             //return inss;
             return salarioBruto * aliquota;
         }
+
         private double ObterAliquota(double salarioBruto)
         {
             if (salarioBruto <= 1_320.00)

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.OrientacaoObjetos
 {
-    internal class Loja
+    internal class Loja : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
+            // Instanciando um objeto chamado computadorJose da classe Computador
             Computador computadorJose = new Computador();
             computadorJose.Processador = "i5 11500H";
             computadorJose.PlacaVideo = "GTX 1650 4GB";
@@ -28,19 +29,20 @@ namespace Fundamentos.OrientacaoObjetos
             double total = computadorJose.Preco + computadorFrancisco.Preco + computadorCristina.Preco;
 
             Console.WriteLine(
-            "Computador José: " +
-            "\nProcessador: " + computadorJose.Processador +
-            "\nPlaca de vídeo: " + computadorJose.PlacaVideo +
-            "\nPreço: " + computadorJose.Preco +
-            "Computador Francisco: " +
-            "\nProcessador: " + computadorFrancisco.Processador +
-            "\nPlaca de vídeo: " + computadorFrancisco.PlacaVideo +
-            "\nPreço: " + computadorFrancisco.Preco +
-            "Computador José: " +
-            "\nProcessador: " + computadorCristina.Processador +
-            "\nPlaca de vídeo: " + computadorCristina.PlacaVideo +
-            "\nPreço: " + computadorCristina.Preco
-                );
+                "Computador do José: " + 
+                "\nProcessador: " + computadorJose.Processador + 
+                "\nPlaca de Vídeo: " + computadorJose.PlacaVideo + 
+                "\nPreço: " + computadorJose.Preco +
+                "\n\nComputador do Francisco: " +
+
+                "\nProcessador: " + computadorFrancisco.Processador +
+                "\nPlaca de Vídeo: " + computadorFrancisco.PlacaVideo +
+                "\nPreço: " + computadorFrancisco.Preco +
+                "\n\nComputador do Cristina: " +
+                "\nProcessador: " + computadorCristina.Processador +
+                "\nPlaca de Vídeo: " + computadorCristina.PlacaVideo +
+                "\nPreço: " + computadorCristina.Preco + 
+                "\n\nTotal: " + total);
         }
     }
 }

@@ -1,144 +1,87 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Fundamentos.EstruturaCondicional
 {
-    internal class EstruturaCondicionalAvancada
+    internal class EstruturaCondicionalAvancada : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
-            // INPUT
+            // INPUTS
+            // byte 0..255, short -32768..32767, int -2bi..2bi e long
+            // byte Convert.ToByte
+            // short Convert.ToInt16
+            // int Convert.ToInt32
+            // long Convert.ToInt64
+            // ToUpper() CALXA ALTA
+            // ToLower() caixa baixa
             Console.Write("Quantidade de horas trabalhadas: ");
-            byte horasTrabalhadas = Convert.ToByte(Console.ReadLine());
-
+            byte quantidadeHorasTrabalhadas = Convert.ToByte(Console.ReadLine());
             Console.Write("Valor hora: ");
-            double valorHora = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Recebe vale educação? S/N: ");
-            bool valeEducacao =
-                Console.ReadLine().ToLower().Trim() == "s" ? true : false;
-
-            Console.Write("Recebe auxilio passe? S/N: ");
-            bool recebeValeTransporte =
-                Console.ReadLine().ToLower().Trim() == "s" ? true : false;
-
-            Console.Write("Filhos menores de 5 anos? S/N: ");
+            double valorHora = Convert.ToDouble(Console.ReadLine()); // 235.94
+            Console.Write("Recebe vale educação? [S/N]: ");
+            string recebeAuxilioEducacaoTexto = Console.ReadLine().Trim().ToLower();
+            bool recebeAuxilioEducacao = false;
+            if (recebeAuxilioEducacaoTexto == "s")
+            {
+                recebeAuxilioEducacao = true;
+            }
+            Console.Write("Recebe auxilio passe? [S/N]: ");
+            string recebeAuxilioPasseTexto = Console.ReadLine().ToUpper().Trim();
+            bool recebeValeTransporte = false;
+            if (recebeAuxilioPasseTexto == "S")
+                recebeValeTransporte = true;
+            Console.Write("Filhos menores de 5 anos? [S/N]: ");
+            // Operador ternário é um IF com retorno de valor
+            // Ex.: string classificacao = idade < 8 ? "Menor" : "Maior";
             bool recebeAuxilioCreche =
-                Console.ReadLine().ToLower().Trim() == "s" ? true : false;
+                Console.ReadLine().ToUpper().Trim() == "S" ? true : false;
 
-            // PROCESSAMENTO
-            double salarioBruto = horasTrabalhadas * valorHora;
+            // Processamento
+            double salarioBruto = quantidadeHorasTrabalhadas * valorHora;
 
-            double descontoInss = calcularInss(salarioBruto);
-            double descontoImpostoRenda = calcularImpostoRenda(salarioBruto);            
-            double descontoValeTransporte = calcularValeTransporte(recebeValeTransporte, salarioBruto);
-           
+            double descontoInss = CalcularInss(salarioBruto);
+            double descontoImpostoRenda = CalcularImpostoRenda(salarioBruto);
+            double acrescimoAuxilioCreche = CalcularAuxilioCreche(recebeAuxilioCreche);
+            double acrescimoAuxilioEducacao = CalcularAuxilioEducacao(recebeAuxilioEducacao);
+            double descontoValeTransporte = CalcularValeTransporte(recebeValeTransporte, salarioBruto);
+
             double descontos = descontoValeTransporte + descontoInss + descontoImpostoRenda;
-
-            double acescimoAuxilioCreche = calcularAuxilioCreche(recebeAuxilioCreche);            
-            double acrescimoAuxilioEducacao = calcularAuxilioEducacao(valeEducacao);            
-            
-            double acrescimos = acrescimoAuxilioEducacao + acescimoAuxilioCreche;
- 
+            double acrescimos = acrescimoAuxilioEducacao + acrescimoAuxilioCreche;
             double salarioLiquido = salarioBruto - descontos + acrescimos;
 
             // OUTPUT
-            Console.WriteLine("Salário bruto: " + salarioBruto);
-            Console.WriteLine("Inss: " + descontoInss);
+            Console.WriteLine("Salário Bruto: " + salarioBruto);
+            Console.WriteLine("INSS: " + descontoInss);
             Console.WriteLine("IR: " + descontoImpostoRenda);
-            Console.WriteLine("Vale transporte: " + descontoValeTransporte);
-            Console.WriteLine("Auxílio educação: " + acrescimoAuxilioEducacao);
-            Console.WriteLine("Auxílio creche: " + acescimoAuxilioCreche);
-            Console.WriteLine("Salário líquido: " + salarioLiquido);
+            Console.WriteLine("Vale Transporte: " + descontoValeTransporte);
+            Console.WriteLine("Auxílio Educação: " + acrescimoAuxilioEducacao);
+            Console.WriteLine("Auxílio Creche: " + acrescimoAuxilioCreche);
+            Console.WriteLine("Salário Líquido: " + salarioLiquido);
+
+            // https://www.tutorialspoint.com/csharp/index.htm
         }
 
-        /// <summary>
-        /// Calcula o desconto do Vale Transporte
-        /// </summary>
-        public double calcularValeTransporte(bool recebeValeTransporte, double salarioBruto)
-        {
-            double descontoValeTransporte = 0;
-            if (recebeValeTransporte)
-            {
-                descontoValeTransporte = salarioBruto * 0.06;
-            }
-            return descontoValeTransporte;
-        }
-
-        /// <summary>
-        /// Calcula o acréscimo do Auxílio Educação
-        /// </summary>
-        public double calcularAuxilioEducacao(bool valeEducacao)
-        {
-            double acrescimoAuxilioEducacao = 0;
-            if (valeEducacao) 
-            {
-                acrescimoAuxilioEducacao = 400;
-            }
-            return acrescimoAuxilioEducacao;
-        }
-
-        /// <summary>
-        /// Calcula o acréscimo do Auxílio Creche
-        /// </summary>
-        public double calcularAuxilioCreche(bool recebeAuxilioCreche)
-        {
-            double acescimoAuxilioCreche = 0;
-            if (recebeAuxilioCreche)
-            {
-                acescimoAuxilioCreche = 200;
-            }
-            return acescimoAuxilioCreche;
-        }
-
-        /// <summary>
-        /// Calcula o desconto do Imposto de Renda
-        /// </summary>
-        public double calcularImpostoRenda(double salarioBruto)
-        {
-            double aliquotaImpostoRenda = 0;
-            if (salarioBruto >= 1903.99)
-            {
-                if (salarioBruto <= 2826.65)
-                {
-                    aliquotaImpostoRenda = 0.075;
-                }
-                else if (salarioBruto <= 3751.05)
-                {
-                    aliquotaImpostoRenda = 0.15;
-                }
-                else if (salarioBruto <= 4664.68)
-                {
-                    aliquotaImpostoRenda = 0.225;
-                }
-                else
-                {
-                    aliquotaImpostoRenda = 0.275;
-                }
-            }
-            double descontoImpostoRenda = salarioBruto * aliquotaImpostoRenda;
-
-            return descontoImpostoRenda;
-        }
-
-        /// <summary>
-        /// Calcula o desconto do INSS
-        /// </summary>
-        public double calcularInss(double salarioBruto)
+        // Método é um trecho de código com o objetivo de realizar alguma operação
+        // Existem dois tipos de métodos com e sem retorno
+        // public double CalcularAreaTriangulo() é um método com retorno do tipo double
+        // public void CalcularAreaTriangulo() é um método sem retorno
+        // Métodos podem receber parâmetros
+        // public double CalcularAreaTriangulo(int lado1, int lado2, int lado) é um método que
+        //    recebe 3 parâmetros e tem um retorno do tipo double
+        // public void EnviarEmail(string destinatario, int quantidadeReenvios) é um método
+        //    que recebe 2 parâmetros e não tem retorno
+        public double CalcularInss(double salarioBruto)
         {
             double aliquotaInss = 0;
-            if (salarioBruto <= 1302)
+            if (salarioBruto <= 1302.00)
             {
                 aliquotaInss = 7.5;
             }
-            else if (salarioBruto <= 25071.29)
+            else if (salarioBruto <= 2571.29)
             {
                 aliquotaInss = 9;
             }
-            else if (salarioBruto <= 3854.94)
+            else if (salarioBruto <= 3856.94)
             {
                 aliquotaInss = 12;
             }
@@ -146,8 +89,56 @@ namespace Fundamentos.EstruturaCondicional
             {
                 aliquotaInss = 14;
             }
-            double descontoInss = salarioBruto / 100 * aliquotaInss;
+            double descontoInss = salarioBruto * (aliquotaInss / 100);
             return descontoInss;
+        }
+
+        public double CalcularImpostoRenda(double salarioBruto)
+        {
+            double aliquotaImpostoRenda = 0;
+            if (salarioBruto >= 1903.99 && salarioBruto <= 2826.65)
+            {
+                aliquotaImpostoRenda = 0.075;
+            }
+            else if (salarioBruto >= 2826.66 && salarioBruto <= 3751.05)
+            {
+                aliquotaImpostoRenda = 0.15;
+            }
+            else if (salarioBruto >= 3751.06 && salarioBruto <= 4664.68)
+            {
+                aliquotaImpostoRenda = 0.225;
+            }
+            else if (salarioBruto >= 4664.69)
+            {
+                aliquotaImpostoRenda = 0.275;
+            }
+            double descontoImpostoRenda = salarioBruto * aliquotaImpostoRenda;
+            return descontoImpostoRenda;
+        }
+
+        public double CalcularAuxilioCreche(bool recebeAuxilioCreche) 
+        {
+            double acrescimoAuxilioCreche = 0;
+            if (recebeAuxilioCreche == true)
+                acrescimoAuxilioCreche = 200;
+
+            return acrescimoAuxilioCreche;
+        }
+
+        public double CalcularAuxilioEducacao(bool recebeAuxilioEducacao)
+        {
+            double acrescimoAuxilioEducacao = 0;
+            if (recebeAuxilioEducacao == true)
+                acrescimoAuxilioEducacao = 400;
+            return acrescimoAuxilioEducacao;
+        }
+
+        public double CalcularValeTransporte(bool recebeValeTransporte, double salarioBruto)
+        {
+            double descontoValeTransporte = 0;
+            if (recebeValeTransporte == true)
+                descontoValeTransporte = salarioBruto * 0.06;
+            return descontoValeTransporte;
         }
     }
 }

@@ -10,49 +10,49 @@ namespace WindowsFormsExemplos
             InitializeComponent();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            string nome = textboxNome.Text;
+            string nome = textBoxNome.Text;
             int quantidadeHoras = 0;
             try
             {
-                quantidadeHoras = Convert.ToInt32(textboxQuantidadeHoras.Text);
-                textboxQuantidadeHoras.ForeColor = Color.Black;
+                quantidadeHoras = Convert.ToInt32(textBoxQuantidadeHoras.Text);
+                textBoxQuantidadeHoras.ForeColor = Color.Black;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Quantidade de horas deve conter apenas números.");
-                textboxQuantidadeHoras.Focus();
-                textboxQuantidadeHoras.ForeColor = Color.Red;
+                MessageBox.Show("Quantidade de horas deve conter somente números");
+                textBoxQuantidadeHoras.Focus();
+                textBoxQuantidadeHoras.ForeColor = Color.Red;
                 return;
             }
 
             double valorHora = 0;
             try
             {
-                valorHora = Convert.ToDouble(textboxValorHora.Text);
-                textboxValorHora.ForeColor = Color.Black;
+                valorHora = Convert.ToDouble(textBoxValorHora.Text);
+                textBoxValorHora.ForeColor = Color.Black;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Valor hora deve conter apenas números reais.");
-                textboxValorHora.Focus();
-                textboxValorHora.ForeColor = Color.Red;
+                MessageBox.Show("Valor hora deve conter somente valor real");
+                textBoxValorHora.Focus();
+                textBoxValorHora.ForeColor = Color.Red;
                 return;
             }
 
             FolhaPagamento folhaPagamento = new FolhaPagamento();
             folhaPagamento.NomeColaborador = nome;
-            folhaPagamento.ValorHora = valorHora;
             folhaPagamento.QuantidadeHoras = quantidadeHoras;
+            folhaPagamento.ValorHora = valorHora;
 
-            MessageBox.Show($@"Folha de pagamento: {folhaPagamento.NomeColaborador}
-Salário bruto: {folhaPagamento.CalcularSalarioBruto():C}
+            MessageBox.Show($@"Folha de Pagamento: {folhaPagamento.NomeColaborador}
+Salário Bruto: {folhaPagamento.CalcularSalarioBruto():C}
 Desconto INSS: {folhaPagamento.CalcularInss():C}");
 
-            var jsonFolhaPagamento = JsonConvert.SerializeObject(folhaPagamento);
-            File.WriteAllText("C:\\Users\\73672\\Desktop\\cursos-c#\\proway-curso-c-sharp-fundamentos\\arquivo.json", jsonFolhaPagamento);
-        }
+            string jsonFolhaPagamento = JsonConvert.SerializeObject(folhaPagamento);
+            File.WriteAllText("C:\\Users\\Moc\\Desktop\\Arquivo.json", jsonFolhaPagamento);
 
+        }
     }
 }

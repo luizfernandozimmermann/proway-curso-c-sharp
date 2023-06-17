@@ -2,6 +2,7 @@
 {
     public class FolhaPagamento
     {
+        // Propriedades
         public string NomeColaborador;
         public double ValorHora;
         public int QuantidadeHoras;
@@ -28,6 +29,7 @@
             //return inss;
             return salarioBruto * aliquota;
         }
+
         private double ObterAliquota(double salarioBruto)
         {
             if (salarioBruto <= 1_320.00)

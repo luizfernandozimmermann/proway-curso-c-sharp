@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.EntradaDados
 {
-    internal class EntradaDados01
+    internal class EntradaDados01 : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
 
             // debug depurar (linha por linha)

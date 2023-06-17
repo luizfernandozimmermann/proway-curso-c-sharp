@@ -29,89 +29,92 @@
         private void InitializeComponent()
         {
             this.labelNome = new System.Windows.Forms.Label();
-            this.textboxNome = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textboxQuantidadeHoras = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textboxValorHora = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.labelQuantidadeHoras = new System.Windows.Forms.Label();
+            this.textBoxQuantidadeHoras = new System.Windows.Forms.TextBox();
+            this.labelValorHora = new System.Windows.Forms.Label();
+            this.textBoxValorHora = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(24, 17);
+            this.labelNome.Location = new System.Drawing.Point(33, 14);
+            this.labelNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(40, 15);
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // textboxNome
+            // textBoxNome
             // 
-            this.textboxNome.Location = new System.Drawing.Point(73, 15);
-            this.textboxNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textboxNome.Name = "textboxNome";
-            this.textboxNome.Size = new System.Drawing.Size(344, 23);
-            this.textboxNome.TabIndex = 1;
+            this.textBoxNome.Location = new System.Drawing.Point(80, 14);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(312, 23);
+            this.textBoxNome.TabIndex = 1;
             // 
-            // label2
+            // labelQuantidadeHoras
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Quantidade de horas";
+            this.labelQuantidadeHoras.AutoSize = true;
+            this.labelQuantidadeHoras.Location = new System.Drawing.Point(33, 46);
+            this.labelQuantidadeHoras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelQuantidadeHoras.Name = "labelQuantidadeHoras";
+            this.labelQuantidadeHoras.Size = new System.Drawing.Size(119, 15);
+            this.labelQuantidadeHoras.TabIndex = 2;
+            this.labelQuantidadeHoras.Text = "Quantidade de Horas";
             // 
-            // textboxQuantidadeHoras
+            // textBoxQuantidadeHoras
             // 
-            this.textboxQuantidadeHoras.Location = new System.Drawing.Point(158, 59);
-            this.textboxQuantidadeHoras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textboxQuantidadeHoras.Name = "textboxQuantidadeHoras";
-            this.textboxQuantidadeHoras.Size = new System.Drawing.Size(259, 23);
-            this.textboxQuantidadeHoras.TabIndex = 3;
+            this.textBoxQuantidadeHoras.Location = new System.Drawing.Point(173, 46);
+            this.textBoxQuantidadeHoras.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxQuantidadeHoras.Name = "textBoxQuantidadeHoras";
+            this.textBoxQuantidadeHoras.Size = new System.Drawing.Size(219, 23);
+            this.textBoxQuantidadeHoras.TabIndex = 3;
             // 
-            // label3
+            // labelValorHora
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Valor hora";
+            this.labelValorHora.AutoSize = true;
+            this.labelValorHora.Location = new System.Drawing.Point(33, 82);
+            this.labelValorHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelValorHora.Name = "labelValorHora";
+            this.labelValorHora.Size = new System.Drawing.Size(62, 15);
+            this.labelValorHora.TabIndex = 4;
+            this.labelValorHora.Text = "Valor Hora";
             // 
-            // textboxValorHora
+            // textBoxValorHora
             // 
-            this.textboxValorHora.Location = new System.Drawing.Point(96, 98);
-            this.textboxValorHora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textboxValorHora.Name = "textboxValorHora";
-            this.textboxValorHora.Size = new System.Drawing.Size(321, 23);
-            this.textboxValorHora.TabIndex = 5;
+            this.textBoxValorHora.Location = new System.Drawing.Point(104, 82);
+            this.textBoxValorHora.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxValorHora.Name = "textBoxValorHora";
+            this.textBoxValorHora.Size = new System.Drawing.Size(288, 23);
+            this.textBoxValorHora.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 142);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(8, 114);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(393, 56);
+            this.button1.Size = new System.Drawing.Size(382, 149);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Calcular salário";
+            this.button1.Text = "Calcular Salário";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 209);
+            this.ClientSize = new System.Drawing.Size(405, 281);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textboxValorHora);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textboxQuantidadeHoras);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textboxNome);
+            this.Controls.Add(this.textBoxValorHora);
+            this.Controls.Add(this.labelValorHora);
+            this.Controls.Add(this.textBoxQuantidadeHoras);
+            this.Controls.Add(this.labelQuantidadeHoras);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelNome);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -122,11 +125,11 @@
         #endregion
 
         private Label labelNome;
-        private TextBox textboxNome;
-        private Label label2;
-        private TextBox textboxQuantidadeHoras;
-        private Label label3;
-        private TextBox textboxValorHora;
+        private TextBox textBoxNome;
+        private Label labelQuantidadeHoras;
+        private TextBox textBoxQuantidadeHoras;
+        private Label labelValorHora;
+        private TextBox textBoxValorHora;
         private Button button1;
     }
 }
