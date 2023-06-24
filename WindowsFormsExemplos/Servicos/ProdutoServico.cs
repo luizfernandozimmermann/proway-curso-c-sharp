@@ -15,9 +15,9 @@ namespace WindowsFormsExemplos.Servicos
              produtoRepositorio = new ProdutoRepositorio();
         }
 
-        public void Cadastrar(string nome, decimal precoUnitario, int quantidade)
+        public void Cadastrar(Produto produto)
         {
-            produtoRepositorio.Cadastrar(nome, precoUnitario, quantidade);
+            produtoRepositorio.Cadastrar(produto);
         }
 
         public List<Produto> ObterTodos()
@@ -41,9 +41,9 @@ namespace WindowsFormsExemplos.Servicos
             return produto;
         }
 
-        public void Editar(int idProdutoEditar, string nome, decimal precoUnitario, int quantidade)
+        public void Editar(Produto produto)
         {
-            produtoRepositorio.Editar(idProdutoEditar, nome, precoUnitario, quantidade);
+            produtoRepositorio.Editar(produto);
         }
     }
 }

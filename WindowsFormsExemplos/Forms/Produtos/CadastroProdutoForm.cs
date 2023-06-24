@@ -15,15 +15,16 @@ namespace WindowsFormsExemplos.Forms.Produtos
     public partial class CadastroProdutoForm : Form
     {
         private int idProdutoEditar = -1;
+        private ProdutoServico produtoServico;
 
         public CadastroProdutoForm()
         {
             InitializeComponent();
+            produtoServico = new ProdutoServico();
         }
 
-        public CadastroProdutoForm(Produto produto)
-        {
-            InitializeComponent();
+        public CadastroProdutoForm(Produto produto) : this()
+        {   
             textBoxNome.Text = produto.Nome;
             textBoxQuantidade.Text = produto.Quantidade.ToString();
             textBoxPrecoUnitario.Text = produto.PrecoUnitario.ToString();
@@ -36,16 +37,20 @@ namespace WindowsFormsExemplos.Forms.Produtos
             var quantidade = Convert.ToInt32(textBoxQuantidade.Text);
             var precoUnitario = Convert.ToDecimal(textBoxPrecoUnitario.Text);
 
-            var produtoServico = new ProdutoServico();
+            var produto = new Produto();
+            produto.Nome = nome;
+            produto.Quantidade = quantidade;
+            produto.PrecoUnitario = precoUnitario;
 
             if (idProdutoEditar == -1)
             {
-                produtoServico.Cadastrar(nome, precoUnitario, quantidade);
+                produtoServico.Cadastrar(produto);
                 MessageBox.Show("Produto cadastrado com sucesso");
             }
             else
             {
-                produtoServico.Editar(idProdutoEditar, nome, precoUnitario, quantidade);
+                produto.Id = idProdutoEditar;
+                produtoServico.Editar(produto);
                 MessageBox.Show("Produto alterado com sucesso");
             }
         }

@@ -11,34 +11,38 @@ namespace WindowsFormsExemplos.Repositorios
 {
     public class ProdutoRepositorio
     {
-        // CRUD
-        public void Cadastrar(string nome, decimal precoUnitario, int quantidade)
+        private BancoDadosConexao bancoDadosConexao;
+
+        public ProdutoRepositorio()
         {
-            var bancoDadosConexao = new BancoDadosConexao();
+            bancoDadosConexao = new BancoDadosConexao();
+        }
+        // CRUD
+        public void Cadastrar(Produto produto)
+        {
             var comando = bancoDadosConexao.Conectar();
 
             comando.CommandText = @"INSERT INTO produtos (nome, preco_unitario, quantidade) 
 VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
-            comando.Parameters.AddWithValue("@NOME", nome);
-            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
-            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            comando.Parameters.AddWithValue("@NOME", produto.Nome);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", produto.PrecoUnitario);
+            comando.Parameters.AddWithValue("@QUANTIDADE", produto.Quantidade);
 
             comando.ExecuteNonQuery();
         }
 
-        public void Editar(int id, string nome, decimal precoUnitario, int quantidade)
+        public void Editar(Produto produto)
         {
-            var bancoDadosConexao = new BancoDadosConexao();
             var comando = bancoDadosConexao.Conectar();
 
             comando.CommandText = "UPDATE produtos SET " +
                 "nome = @NOME, preco_unitario = @PRECO_UNITARIO, quantidade = @QUANTIDADE " +
                 "WHERE id = @ID";
-            comando.Parameters.AddWithValue("@ID", id);
-            comando.Parameters.AddWithValue("@NOME", nome);
-            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
-            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            comando.Parameters.AddWithValue("@ID", produto.Id);
+            comando.Parameters.AddWithValue("@NOME", produto.Nome);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", produto.PrecoUnitario);
+            comando.Parameters.AddWithValue("@QUANTIDADE", produto.Quantidade);
 
             comando.ExecuteNonQuery();
         }
@@ -46,7 +50,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
         public void Apagar(int id)
         {
             // Abrir conexão
-            var bancoDadosConexao = new BancoDadosConexao();
             var comando = bancoDadosConexao.Conectar();
 
             // Definir o comando
@@ -61,7 +64,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
         {
             var produtos = new List<Produto>();
             // Abrir a conexão
-            var bancoDadosConexao = new BancoDadosConexao();
             var comando = bancoDadosConexao.Conectar();
 
             // Executar o comando de SELECT
@@ -78,13 +80,7 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
                 var registro = tabelaEmMemoria.Rows[i];
                 
                 // Instanciar um objeto da classe Produto
-                var produto = new Produto();
-
-                // Preencher as propriedades do objeto do Produto
-                produto.Id = Convert.ToInt32(registro["id"]);
-                produto.Nome = registro["nome"].ToString();
-                produto.Quantidade = Convert.ToInt32(registro["quantidade"]);
-                produto.PrecoUnitario = Convert.ToDecimal(registro["preco_unitario"]);
+                var produto = ConstruirProdutoDoRegistro(registro);
 
                 // Adicionar o produto na lista de produtos
                 produtos.Add(produto);
@@ -96,8 +92,6 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
         public Produto ObterPorId(int id)
         {
-            var bancoDadosConexao = new BancoDadosConexao();
-
             var comando = bancoDadosConexao.Conectar();
 
             comando.CommandText = "SELECT * FROM produtos WHERE id = @ID";
@@ -108,6 +102,12 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
             var linha = tabelaEmMemoria.Rows[0];
 
+            var produto = ConstruirProdutoDoRegistro(linha);
+            return produto;
+        }
+
+        private Produto ConstruirProdutoDoRegistro(DataRow linha)
+        {
             var produto = new Produto();
             produto.Id = Convert.ToInt32(linha["id"]);
             produto.Nome = linha["nome"].ToString();
@@ -116,6 +116,7 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
 
             return produto;
         }
+
     }
 
     public class Produto
@@ -124,5 +125,9 @@ VALUES (@NOME, @PRECO_UNITARIO, @QUANTIDADE);";
         public string Nome { get; set; }
         public decimal PrecoUnitario { get; set; }
         public int Quantidade { get; set; }
+        public DateTime DataVencimento { get; set; }
+        public DateTime DataFabricacao { get; set; }
+        public string CodigoBarra { get; set; }
+        public string Categoria { get; set; }
     }
 }
