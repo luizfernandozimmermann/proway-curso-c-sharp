@@ -33,6 +33,7 @@
             buttonCadastroFilmes = new Button();
             buttonCadastroSimplificadoProdutoBancoDados = new Button();
             buttonListaProdutos = new Button();
+            buttonListaClientes = new Button();
             SuspendLayout();
             // 
             // buttonFolhaPagamento
@@ -87,11 +88,22 @@
             buttonListaProdutos.UseVisualStyleBackColor = true;
             buttonListaProdutos.Click += buttonListaProdutos_Click;
             // 
+            // buttonListaClientes
+            // 
+            buttonListaClientes.Location = new Point(186, 398);
+            buttonListaClientes.Name = "buttonListaClientes";
+            buttonListaClientes.Size = new Size(185, 180);
+            buttonListaClientes.TabIndex = 5;
+            buttonListaClientes.Text = "Lista Clientes";
+            buttonListaClientes.UseVisualStyleBackColor = true;
+            buttonListaClientes.Click += buttonListaClientes_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(buttonListaClientes);
             Controls.Add(buttonListaProdutos);
             Controls.Add(buttonCadastroSimplificadoProdutoBancoDados);
             Controls.Add(buttonCadastroFilmes);
@@ -111,5 +123,6 @@
         private Button buttonCadastroFilmes;
         private Button buttonCadastroSimplificadoProdutoBancoDados;
         private Button buttonListaProdutos;
+        private Button buttonListaClientes;
     }
 }
