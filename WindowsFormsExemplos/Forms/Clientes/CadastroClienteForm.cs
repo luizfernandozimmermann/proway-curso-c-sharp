@@ -18,25 +18,32 @@ namespace WindowsFormsExemplos.Forms.Clientes
 
         private void BuscarEnderecoPorCep()
         {
-            var cep = maskedTextBoxCep.Text;
-
-            var url = $"https://viacep.com.br/ws/{cep}/json/";
-
-            var httpCliente = new HttpClient();
-            var response = httpCliente.GetAsync(url).GetAwaiter().GetResult();
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            try
             {
-                var responseTexto = response.Content.ReadAsStringAsync().Result;
-                var endereco = JsonConvert.DeserializeObject
-                    <Dictionary<string, string>>(responseTexto);
+                var cep = maskedTextBoxCep.Text;
 
-                comboBoxEstado.SelectedItem = endereco["uf"].ToUpper();
-                textBoxCidade.Text = endereco["localidade"];
-                textBoxBairro.Text = endereco["bairro"];
-                textBoxLogradouro.Text = endereco["logradouro"];
-                textBoxNumero.Focus();
+                var url = $"https://viacep.com.br/ws/{cep}/json/";
+
+                var httpCliente = new HttpClient();
+                var response = httpCliente.GetAsync(url).GetAwaiter().GetResult();
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var responseTexto = response.Content.ReadAsStringAsync().Result;
+                    var endereco = JsonConvert.DeserializeObject
+                        <Dictionary<string, string>>(responseTexto);
+
+                    comboBoxEstado.SelectedItem = endereco["uf"].ToUpper();
+                    textBoxCidade.Text = endereco["localidade"];
+                    textBoxBairro.Text = endereco["bairro"];
+                    textBoxLogradouro.Text = endereco["logradouro"];
+                    textBoxNumero.Focus();
+                }
+            }catch (Exception ex)
+            {
+
             }
+            
         }
 
         private void maskedTextBoxCep_Leave(object sender, EventArgs e)
@@ -79,6 +86,8 @@ namespace WindowsFormsExemplos.Forms.Clientes
             cliente.Endereco.Complemento = complemento;
 
             clienteServico.Cadastrar(cliente);
+
+            MessageBox.Show("Cliente cadastrado com sucesso!");
         }
     }
 }
