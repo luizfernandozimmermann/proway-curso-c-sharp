@@ -1,3 +1,5 @@
 */bin
 */obj
 .vs
+/WindowsFormsExemplos/BancoDados/WindowsFormsBancoDados.mdf
+/WindowsFormsExemplos/BancoDados/WindowsFormsBancoDados_log.ldf
