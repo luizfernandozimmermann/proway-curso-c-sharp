@@ -16,5 +16,11 @@ namespace WindowsFormsExemplos.Servicos
         {
             repositorio.Cadastrar(cliente); 
         }
+
+        public List<Cliente> ObterTodos()
+        {
+            var clientes = repositorio.ObterTodos();
+            return clientes;
+        }
     }
 }
