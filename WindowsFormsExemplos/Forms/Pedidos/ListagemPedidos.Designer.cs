@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            ColumnId = new DataGridViewTextBoxColumn();
+            ColumnCliente = new DataGridViewTextBoxColumn();
+            ColumnStatus = new DataGridViewTextBoxColumn();
+            ColumnValorTotal = new DataGridViewTextBoxColumn();
             labelCliente = new Label();
             comboBoxClientes = new ComboBox();
             radioButtonStatusTodos = new RadioButton();
@@ -42,37 +46,73 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 135);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnCliente, ColumnStatus, ColumnValorTotal });
+            dataGridView1.Location = new Point(10, 101);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(776, 303);
+            dataGridView1.Size = new Size(679, 227);
             dataGridView1.TabIndex = 0;
+            // 
+            // ColumnId
+            // 
+            ColumnId.HeaderText = "Código";
+            ColumnId.Name = "ColumnId";
+            ColumnId.ReadOnly = true;
+            // 
+            // ColumnCliente
+            // 
+            ColumnCliente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnCliente.HeaderText = "Cliente";
+            ColumnCliente.Name = "ColumnCliente";
+            ColumnCliente.ReadOnly = true;
+            // 
+            // ColumnStatus
+            // 
+            ColumnStatus.HeaderText = "Status";
+            ColumnStatus.Name = "ColumnStatus";
+            ColumnStatus.ReadOnly = true;
+            // 
+            // ColumnValorTotal
+            // 
+            ColumnValorTotal.HeaderText = "Valor Total";
+            ColumnValorTotal.Name = "ColumnValorTotal";
+            ColumnValorTotal.ReadOnly = true;
             // 
             // labelCliente
             // 
             labelCliente.AutoSize = true;
-            labelCliente.Location = new Point(35, 13);
+            labelCliente.Location = new Point(31, 10);
             labelCliente.Name = "labelCliente";
-            labelCliente.Size = new Size(55, 20);
+            labelCliente.Size = new Size(44, 15);
             labelCliente.TabIndex = 1;
             labelCliente.Text = "Cliente";
             // 
             // comboBoxClientes
             // 
+            comboBoxClientes.DisplayMember = "Nome";
             comboBoxClientes.FormattingEnabled = true;
-            comboBoxClientes.Location = new Point(35, 36);
+            comboBoxClientes.Location = new Point(31, 27);
+            comboBoxClientes.Margin = new Padding(3, 2, 3, 2);
             comboBoxClientes.Name = "comboBoxClientes";
-            comboBoxClientes.Size = new Size(246, 28);
+            comboBoxClientes.Size = new Size(216, 23);
             comboBoxClientes.TabIndex = 2;
+            comboBoxClientes.ValueMember = "Nome";
+            comboBoxClientes.SelectedIndexChanged += comboBoxClientes_SelectedIndexChanged;
             // 
             // radioButtonStatusTodos
             // 
             radioButtonStatusTodos.AutoSize = true;
-            radioButtonStatusTodos.Location = new Point(287, 36);
+            radioButtonStatusTodos.Checked = true;
+            radioButtonStatusTodos.Location = new Point(251, 27);
+            radioButtonStatusTodos.Margin = new Padding(3, 2, 3, 2);
             radioButtonStatusTodos.Name = "radioButtonStatusTodos";
-            radioButtonStatusTodos.Size = new Size(70, 24);
+            radioButtonStatusTodos.Size = new Size(56, 19);
             radioButtonStatusTodos.TabIndex = 3;
             radioButtonStatusTodos.TabStop = true;
             radioButtonStatusTodos.Text = "Todos";
@@ -81,50 +121,51 @@
             // radioButtonStatusOrcamento
             // 
             radioButtonStatusOrcamento.AutoSize = true;
-            radioButtonStatusOrcamento.Location = new Point(287, 66);
+            radioButtonStatusOrcamento.Location = new Point(251, 50);
+            radioButtonStatusOrcamento.Margin = new Padding(3, 2, 3, 2);
             radioButtonStatusOrcamento.Name = "radioButtonStatusOrcamento";
-            radioButtonStatusOrcamento.Size = new Size(110, 24);
+            radioButtonStatusOrcamento.Size = new Size(90, 19);
             radioButtonStatusOrcamento.TabIndex = 4;
-            radioButtonStatusOrcamento.TabStop = true;
             radioButtonStatusOrcamento.Text = "Orçamentos";
             radioButtonStatusOrcamento.UseVisualStyleBackColor = true;
             // 
             // radioButtonStatusEfetivado
             // 
             radioButtonStatusEfetivado.AutoSize = true;
-            radioButtonStatusEfetivado.Location = new Point(428, 36);
+            radioButtonStatusEfetivado.Location = new Point(374, 27);
+            radioButtonStatusEfetivado.Margin = new Padding(3, 2, 3, 2);
             radioButtonStatusEfetivado.Name = "radioButtonStatusEfetivado";
-            radioButtonStatusEfetivado.Size = new Size(99, 24);
+            radioButtonStatusEfetivado.Size = new Size(79, 19);
             radioButtonStatusEfetivado.TabIndex = 5;
-            radioButtonStatusEfetivado.TabStop = true;
             radioButtonStatusEfetivado.Text = "Efetivados";
             radioButtonStatusEfetivado.UseVisualStyleBackColor = true;
             // 
             // radioButtonStatusCancelado
             // 
             radioButtonStatusCancelado.AutoSize = true;
-            radioButtonStatusCancelado.Location = new Point(428, 66);
+            radioButtonStatusCancelado.Location = new Point(374, 50);
+            radioButtonStatusCancelado.Margin = new Padding(3, 2, 3, 2);
             radioButtonStatusCancelado.Name = "radioButtonStatusCancelado";
-            radioButtonStatusCancelado.Size = new Size(106, 24);
+            radioButtonStatusCancelado.Size = new Size(86, 19);
             radioButtonStatusCancelado.TabIndex = 6;
-            radioButtonStatusCancelado.TabStop = true;
             radioButtonStatusCancelado.Text = "Cancelados";
             radioButtonStatusCancelado.UseVisualStyleBackColor = true;
             // 
             // labelStatus
             // 
             labelStatus.AutoSize = true;
-            labelStatus.Location = new Point(287, 9);
+            labelStatus.Location = new Point(251, 7);
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(49, 20);
+            labelStatus.Size = new Size(39, 15);
             labelStatus.TabIndex = 7;
             labelStatus.Text = "Status";
             // 
             // buttonCriarOrcamento
             // 
-            buttonCriarOrcamento.Location = new Point(668, 13);
+            buttonCriarOrcamento.Location = new Point(584, 10);
+            buttonCriarOrcamento.Margin = new Padding(3, 2, 3, 2);
             buttonCriarOrcamento.Name = "buttonCriarOrcamento";
-            buttonCriarOrcamento.Size = new Size(120, 116);
+            buttonCriarOrcamento.Size = new Size(105, 87);
             buttonCriarOrcamento.TabIndex = 8;
             buttonCriarOrcamento.Text = "Criar orçamento";
             buttonCriarOrcamento.UseVisualStyleBackColor = true;
@@ -132,9 +173,9 @@
             // 
             // ListagemPedidos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(buttonCriarOrcamento);
             Controls.Add(labelStatus);
             Controls.Add(radioButtonStatusCancelado);
@@ -144,8 +185,10 @@
             Controls.Add(comboBoxClientes);
             Controls.Add(labelCliente);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ListagemPedidos";
             Text = "ListagemPedidos";
+            Load += ListagemPedidos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -162,5 +205,9 @@
         private RadioButton radioButtonStatusCancelado;
         private Label labelStatus;
         private Button buttonCriarOrcamento;
+        private DataGridViewTextBoxColumn ColumnId;
+        private DataGridViewTextBoxColumn ColumnCliente;
+        private DataGridViewTextBoxColumn ColumnStatus;
+        private DataGridViewTextBoxColumn ColumnValorTotal;
     }
 }

@@ -34,14 +34,14 @@
             buttonCadastroSimplificadoProdutoBancoDados = new Button();
             buttonListaProdutos = new Button();
             buttonListaClientes = new Button();
+            buttonListarPedidos = new Button();
             SuspendLayout();
             // 
             // buttonFolhaPagamento
             // 
-            buttonFolhaPagamento.Location = new Point(14, 16);
-            buttonFolhaPagamento.Margin = new Padding(3, 4, 3, 4);
+            buttonFolhaPagamento.Location = new Point(12, 12);
             buttonFolhaPagamento.Name = "buttonFolhaPagamento";
-            buttonFolhaPagamento.Size = new Size(166, 180);
+            buttonFolhaPagamento.Size = new Size(145, 135);
             buttonFolhaPagamento.TabIndex = 0;
             buttonFolhaPagamento.Text = "Folha Pagamento";
             buttonFolhaPagamento.UseVisualStyleBackColor = true;
@@ -49,10 +49,9 @@
             // 
             // buttonCadastroSimplificadoProduto
             // 
-            buttonCadastroSimplificadoProduto.Location = new Point(186, 16);
-            buttonCadastroSimplificadoProduto.Margin = new Padding(3, 4, 3, 4);
+            buttonCadastroSimplificadoProduto.Location = new Point(163, 12);
             buttonCadastroSimplificadoProduto.Name = "buttonCadastroSimplificadoProduto";
-            buttonCadastroSimplificadoProduto.Size = new Size(163, 180);
+            buttonCadastroSimplificadoProduto.Size = new Size(143, 135);
             buttonCadastroSimplificadoProduto.TabIndex = 1;
             buttonCadastroSimplificadoProduto.Text = "Cadastro Simplificado Produto";
             buttonCadastroSimplificadoProduto.UseVisualStyleBackColor = true;
@@ -60,9 +59,10 @@
             // 
             // buttonCadastroFilmes
             // 
-            buttonCadastroFilmes.Location = new Point(355, 16);
+            buttonCadastroFilmes.Location = new Point(311, 12);
+            buttonCadastroFilmes.Margin = new Padding(3, 2, 3, 2);
             buttonCadastroFilmes.Name = "buttonCadastroFilmes";
-            buttonCadastroFilmes.Size = new Size(171, 180);
+            buttonCadastroFilmes.Size = new Size(150, 135);
             buttonCadastroFilmes.TabIndex = 2;
             buttonCadastroFilmes.Text = "Cadastro Filmes";
             buttonCadastroFilmes.UseVisualStyleBackColor = true;
@@ -70,9 +70,10 @@
             // 
             // buttonCadastroSimplificadoProdutoBancoDados
             // 
-            buttonCadastroSimplificadoProdutoBancoDados.Location = new Point(542, 16);
+            buttonCadastroSimplificadoProdutoBancoDados.Location = new Point(474, 12);
+            buttonCadastroSimplificadoProdutoBancoDados.Margin = new Padding(3, 2, 3, 2);
             buttonCadastroSimplificadoProdutoBancoDados.Name = "buttonCadastroSimplificadoProdutoBancoDados";
-            buttonCadastroSimplificadoProdutoBancoDados.Size = new Size(171, 180);
+            buttonCadastroSimplificadoProdutoBancoDados.Size = new Size(150, 135);
             buttonCadastroSimplificadoProdutoBancoDados.TabIndex = 3;
             buttonCadastroSimplificadoProdutoBancoDados.Text = "Cadastro Simplificado Produto Bando Dados";
             buttonCadastroSimplificadoProdutoBancoDados.UseVisualStyleBackColor = true;
@@ -80,9 +81,10 @@
             // 
             // buttonListaProdutos
             // 
-            buttonListaProdutos.Location = new Point(9, 398);
+            buttonListaProdutos.Location = new Point(8, 298);
+            buttonListaProdutos.Margin = new Padding(3, 2, 3, 2);
             buttonListaProdutos.Name = "buttonListaProdutos";
-            buttonListaProdutos.Size = new Size(171, 180);
+            buttonListaProdutos.Size = new Size(150, 135);
             buttonListaProdutos.TabIndex = 4;
             buttonListaProdutos.Text = "Lista de Produtos";
             buttonListaProdutos.UseVisualStyleBackColor = true;
@@ -90,26 +92,38 @@
             // 
             // buttonListaClientes
             // 
-            buttonListaClientes.Location = new Point(186, 398);
+            buttonListaClientes.Location = new Point(163, 298);
+            buttonListaClientes.Margin = new Padding(3, 2, 3, 2);
             buttonListaClientes.Name = "buttonListaClientes";
-            buttonListaClientes.Size = new Size(185, 180);
+            buttonListaClientes.Size = new Size(162, 135);
             buttonListaClientes.TabIndex = 5;
             buttonListaClientes.Text = "Lista Clientes";
             buttonListaClientes.UseVisualStyleBackColor = true;
             buttonListaClientes.Click += buttonListaClientes_Click;
             // 
+            // buttonListarPedidos
+            // 
+            buttonListarPedidos.Location = new Point(331, 298);
+            buttonListarPedidos.Margin = new Padding(3, 2, 3, 2);
+            buttonListarPedidos.Name = "buttonListarPedidos";
+            buttonListarPedidos.Size = new Size(162, 135);
+            buttonListarPedidos.TabIndex = 6;
+            buttonListarPedidos.Text = "Lista Pedidos";
+            buttonListarPedidos.UseVisualStyleBackColor = true;
+            buttonListarPedidos.Click += buttonListarProdutos_Click;
+            // 
             // MenuPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonListarPedidos);
             Controls.Add(buttonListaClientes);
             Controls.Add(buttonListaProdutos);
             Controls.Add(buttonCadastroSimplificadoProdutoBancoDados);
             Controls.Add(buttonCadastroFilmes);
             Controls.Add(buttonCadastroSimplificadoProduto);
             Controls.Add(buttonFolhaPagamento);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Windows Forms";
@@ -124,5 +138,6 @@
         private Button buttonCadastroSimplificadoProdutoBancoDados;
         private Button buttonListaProdutos;
         private Button buttonListaClientes;
+        private Button buttonListarPedidos;
     }
 }

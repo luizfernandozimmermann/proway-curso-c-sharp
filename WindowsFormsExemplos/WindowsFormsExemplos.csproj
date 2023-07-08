@@ -9,12 +9,17 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="MailKit" Version="4.1.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ProWayModelos\ProWayModelos.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Imagens\" />
 	</ItemGroup>
 
 </Project>

@@ -42,6 +42,11 @@
             labelTotalValor = new Label();
             labelTotal = new Label();
             dataGridViewCarrinho = new DataGridView();
+            ColumnIdCarrinho = new DataGridViewTextBoxColumn();
+            ColumnProduto = new DataGridViewTextBoxColumn();
+            ColumnQuantidade = new DataGridViewTextBoxColumn();
+            ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
+            ColumnTotal = new DataGridViewTextBoxColumn();
             labelCarrinho = new Label();
             buttonAdicionar = new Button();
             labelTotalPedido = new Label();
@@ -178,14 +183,50 @@
             // 
             // dataGridViewCarrinho
             // 
+            dataGridViewCarrinho.AllowUserToAddRows = false;
+            dataGridViewCarrinho.AllowUserToDeleteRows = false;
             dataGridViewCarrinho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCarrinho.Columns.AddRange(new DataGridViewColumn[] { ColumnIdCarrinho, ColumnProduto, ColumnQuantidade, ColumnPrecoUnitario, ColumnTotal });
             dataGridViewCarrinho.Location = new Point(424, 166);
             dataGridViewCarrinho.Margin = new Padding(3, 2, 3, 2);
             dataGridViewCarrinho.Name = "dataGridViewCarrinho";
+            dataGridViewCarrinho.ReadOnly = true;
             dataGridViewCarrinho.RowHeadersWidth = 51;
             dataGridViewCarrinho.RowTemplate.Height = 29;
             dataGridViewCarrinho.Size = new Size(600, 329);
             dataGridViewCarrinho.TabIndex = 13;
+            // 
+            // ColumnIdCarrinho
+            // 
+            ColumnIdCarrinho.HeaderText = "Id";
+            ColumnIdCarrinho.Name = "ColumnIdCarrinho";
+            ColumnIdCarrinho.ReadOnly = true;
+            ColumnIdCarrinho.Visible = false;
+            // 
+            // ColumnProduto
+            // 
+            ColumnProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnProduto.HeaderText = "Produto";
+            ColumnProduto.Name = "ColumnProduto";
+            ColumnProduto.ReadOnly = true;
+            // 
+            // ColumnQuantidade
+            // 
+            ColumnQuantidade.HeaderText = "Quantidade";
+            ColumnQuantidade.Name = "ColumnQuantidade";
+            ColumnQuantidade.ReadOnly = true;
+            // 
+            // ColumnPrecoUnitario
+            // 
+            ColumnPrecoUnitario.HeaderText = "Preço unitário";
+            ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
+            ColumnPrecoUnitario.ReadOnly = true;
+            // 
+            // ColumnTotal
+            // 
+            ColumnTotal.HeaderText = "Total";
+            ColumnTotal.Name = "ColumnTotal";
+            ColumnTotal.ReadOnly = true;
             // 
             // labelCarrinho
             // 
@@ -206,6 +247,7 @@
             buttonAdicionar.TabIndex = 15;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = true;
+            buttonAdicionar.Click += buttonAdicionar_Click;
             // 
             // labelTotalPedido
             // 
@@ -236,6 +278,7 @@
             buttonFecharPedido.TabIndex = 18;
             buttonFecharPedido.Text = "Fechar Pedido";
             buttonFecharPedido.UseVisualStyleBackColor = true;
+            buttonFecharPedido.Click += buttonFecharPedido_Click;
             // 
             // buttonCancelarPedido
             // 
@@ -246,6 +289,7 @@
             buttonCancelarPedido.TabIndex = 19;
             buttonCancelarPedido.Text = "Cancelar Orçamento";
             buttonCancelarPedido.UseVisualStyleBackColor = true;
+            buttonCancelarPedido.Click += buttonCancelarPedido_Click;
             // 
             // CadastroPedidoForm
             // 
@@ -304,5 +348,10 @@
         private Label labelTotalPedidoValor;
         private Button buttonFecharPedido;
         private Button buttonCancelarPedido;
+        private DataGridViewTextBoxColumn ColumnIdCarrinho;
+        private DataGridViewTextBoxColumn ColumnProduto;
+        private DataGridViewTextBoxColumn ColumnQuantidade;
+        private DataGridViewTextBoxColumn ColumnPrecoUnitario;
+        private DataGridViewTextBoxColumn ColumnTotal;
     }
 }

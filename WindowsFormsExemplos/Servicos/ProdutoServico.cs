@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsExemplos.Modelos;
 using WindowsFormsExemplos.Repositorios;
 
 namespace WindowsFormsExemplos.Servicos
