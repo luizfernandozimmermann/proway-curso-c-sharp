@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.OrientacaoObjetos
 {
-    internal class ListaColaboradores : Executor
+    internal class ListaColaboradores
     {
-        public override void Executar()
+        public void CalcularFolhasPagamento()
         {
             // Objeto jose intancia da classe FolhaPagamento
             FolhaPagamento jose = new FolhaPagamento();

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentos.Construtores
+namespace Fundamentos.construtores
 {
     internal class ExemploConstrutor : Executor
     {
         public override void Executar()
         {
             var computadorJose = new Computador(
-                "Inte Core i5 11ª Geração",
+                "Intel Core i5 11ª Geração",
                 MemoriaRamEnum.Memoria32Gb,
                 500,
                 1024);

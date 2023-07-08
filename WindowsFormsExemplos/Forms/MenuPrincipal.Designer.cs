@@ -34,7 +34,6 @@
             buttonCadastroSimplificadoProdutoBancoDados = new Button();
             buttonListaProdutos = new Button();
             buttonListaClientes = new Button();
-            buttonListaPedidos = new Button();
             SuspendLayout();
             // 
             // buttonFolhaPagamento
@@ -91,30 +90,19 @@
             // 
             // buttonListaClientes
             // 
-            buttonListaClientes.Location = new Point(204, 398);
+            buttonListaClientes.Location = new Point(186, 398);
             buttonListaClientes.Name = "buttonListaClientes";
-            buttonListaClientes.Size = new Size(171, 180);
+            buttonListaClientes.Size = new Size(185, 180);
             buttonListaClientes.TabIndex = 5;
-            buttonListaClientes.Text = "Lista de Clientes";
+            buttonListaClientes.Text = "Lista Clientes";
             buttonListaClientes.UseVisualStyleBackColor = true;
             buttonListaClientes.Click += buttonListaClientes_Click;
-            // 
-            // buttonListaPedidos
-            // 
-            buttonListaPedidos.Location = new Point(397, 398);
-            buttonListaPedidos.Name = "buttonListaPedidos";
-            buttonListaPedidos.Size = new Size(171, 180);
-            buttonListaPedidos.TabIndex = 6;
-            buttonListaPedidos.Text = "Lista de Pedidos";
-            buttonListaPedidos.UseVisualStyleBackColor = true;
-            buttonListaPedidos.Click += buttonListaPedidos_Click;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(buttonListaPedidos);
             Controls.Add(buttonListaClientes);
             Controls.Add(buttonListaProdutos);
             Controls.Add(buttonCadastroSimplificadoProdutoBancoDados);
@@ -136,6 +124,5 @@
         private Button buttonCadastroSimplificadoProdutoBancoDados;
         private Button buttonListaProdutos;
         private Button buttonListaClientes;
-        private Button buttonListaPedidos;
     }
 }

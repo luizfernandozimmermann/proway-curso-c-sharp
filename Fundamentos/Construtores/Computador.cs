@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentos.Construtores
+namespace Fundamentos.construtores
 {
     internal class Computador
     {
@@ -14,24 +14,18 @@ namespace Fundamentos.Construtores
         public string ModeloPlacaMae { get; set; }
         public string ModeloArmazenamento { get; set; }
         public int Armazenamento { get; set; }
-        public string ModeloFonte { get; set; }
+        public string Fonte { get; set; }
         public int CapacidadeFonte { get; set; }
 
-
-        // Construtor (é método) tem como objetivo garantir que
-        // o objeto será criado com as propriedades necessárias preenchidas,
-        // para o correto funcionamento.
-        // encapsulamento + NomeClasse(parâmetros)
         public Computador(
-            string modeloProcessador,
+            string modeloProcessador, 
             MemoriaRamEnum memoriaRam, 
             int capacidadeFonte, 
-            int armazenamento)
+            int armazenamento) 
         {
-            // Propriedade = parâmetro
             ModeloProcessador = modeloProcessador;
             MemoriaRam = memoriaRam;
-            CapacidadeFonte = capacidadeFonte;
+            CapacidadeFonte = capacidadeFonte;  
             Armazenamento = armazenamento;
         }
     }

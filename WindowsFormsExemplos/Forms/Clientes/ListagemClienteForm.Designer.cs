@@ -42,12 +42,12 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCodigo, ColumnNome, ColumnCpf });
-            dataGridView1.Location = new Point(12, 50);
+            dataGridView1.Location = new Point(12, 47);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1213, 593);
+            dataGridView1.Size = new Size(776, 391);
             dataGridView1.TabIndex = 0;
             // 
             // ColumnCodigo
@@ -76,7 +76,7 @@
             // 
             // buttonCadastrar
             // 
-            buttonCadastrar.Location = new Point(1131, 12);
+            buttonCadastrar.Location = new Point(694, 12);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(94, 29);
             buttonCadastrar.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1237, 655);
+            ClientSize = new Size(800, 450);
             Controls.Add(buttonCadastrar);
             Controls.Add(dataGridView1);
             Name = "ListagemClienteForm";

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.OrientacaoObjetos
 {
-    internal class Loja
+    internal class Loja : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             // Instanciando um objeto chamado computadorJose da classe Computador
             Computador computadorJose = new Computador();

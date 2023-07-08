@@ -17,7 +17,7 @@ namespace Fundamentos.Herancas
             contaFrancisco.Depositar(10.00m);
 
             var contaMatheus = new ContaPoupanca();
-            contaMatheus.Cliente = "Mathues";
+            contaMatheus.Cliente = "Matheus";
             contaMatheus.Saldo = 25_569.71m;
             contaMatheus.Codigo = 2;
             contaMatheus.Depositar(500);
@@ -28,12 +28,11 @@ namespace Fundamentos.Herancas
             contaPedro.Saldo = 43_210.30m;
             contaPedro.Codigo = 3;
             contaPedro.SaldoChequeEspecial = 1500.00m;
-            contaPedro.Depositar(350.28m);
+            contaMatheus.Depositar(350.28m);
 
             Console.WriteLine(contaFrancisco.ObterExtrato());
             Console.WriteLine(contaMatheus.ObterExtrato());
             Console.WriteLine(contaPedro.ObterExtrato());
-
         }
     }
 }

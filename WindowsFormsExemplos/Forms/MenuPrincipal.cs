@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsExemplos.Forms.Clientes;
-using WindowsFormsExemplos.Forms.Pedidos;
 using WindowsFormsExemplos.Forms.Produtos;
 
 namespace WindowsFormsExemplos.Forms
@@ -54,12 +53,6 @@ namespace WindowsFormsExemplos.Forms
         private void buttonListaClientes_Click(object sender, EventArgs e)
         {
             var form = new ListagemClienteForm();
-            form.ShowDialog();
-        }
-
-        private void buttonListaPedidos_Click(object sender, EventArgs e)
-        {
-            var form = new ListagemPedidos();
             form.ShowDialog();
         }
     }

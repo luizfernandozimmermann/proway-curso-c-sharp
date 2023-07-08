@@ -50,11 +50,12 @@ namespace WindowsFormsExemplos.Repositorios
             foreach (DataRow registro in tabelaEmMemoria.Rows)
             {
                 var cliente = new Cliente();
+
                 cliente.Id = Convert.ToInt32(registro["id"]);
                 cliente.Nome = registro["nome"].ToString();
                 cliente.Cpf = registro["cpf"].ToString();
                 cliente.DataNascimento = Convert.ToDateTime(registro["data_nascimento"]);
-                
+
                 cliente.Endereco = new Endereco();
                 cliente.Endereco.Cep = registro["cep"].ToString();
                 cliente.Endereco.Numero = registro["numero"].ToString();
@@ -65,7 +66,8 @@ namespace WindowsFormsExemplos.Repositorios
 
                 clientes.Add(cliente);
             }
-            return clientes;          
+
+            return clientes;
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Fundamentos.Herancas
 {
     public class Conta
     {
-        // Propriedades
         public int Codigo { get; set; }
         public string Cliente { get; set; }
         public decimal Saldo { get; set; }
@@ -16,16 +15,19 @@ namespace Fundamentos.Herancas
 
         public void Depositar(decimal valor)
         {
-            // Adicionar no saldo o valor do depósito
-            Saldo += valor;
+            Saldo += valor; 
         }
 
-        // Virtual permite que classes filhas modifiquem o comportamento
-        // do método da classe pai
         public virtual string ObterExtrato()
         {
             var extrato = $"Nome: {Cliente}\nSaldo: {Saldo}";
+
             return extrato;
+        }
+
+        public virtual decimal CalcularSaldoTotal()
+        {
+            return Saldo * 1.05m;
         }
     }
 }

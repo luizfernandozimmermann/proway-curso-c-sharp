@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentos.Construtores
+namespace Fundamentos.construtores
 {
     internal enum MemoriaRamEnum
     {
@@ -12,5 +12,6 @@ namespace Fundamentos.Construtores
         Memoria16Gb,
         Memoria24Gb,
         Memoria32Gb,
+        Memoria64Gb
     }
 }

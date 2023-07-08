@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.OrientacaoObjetos
 {
-    internal class ListaColaboradoresIterativa : Executor
+    internal class ListaColaboradoresIterativa
     {
-        public override void Executar()
+        public void CalcularFolhasPagamento()
         {
             FolhaPagamento folhaPagamento = new FolhaPagamento();
             Console.Write("Nome: ");

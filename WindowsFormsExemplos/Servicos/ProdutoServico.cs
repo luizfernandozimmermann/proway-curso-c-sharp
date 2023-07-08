@@ -3,38 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsExemplos.Modelos;
 using WindowsFormsExemplos.Repositorios;
 
 namespace WindowsFormsExemplos.Servicos
 {
-    public class ProdutoServico
+    public class ProdutoServico 
     {
         private ProdutoRepositorio produtoRepositorio;
-
-        // Construtor
-        public ProdutoServico()
-        {
-            // Instanciando o objeto da classe ProdutoRepositorio 
-            produtoRepositorio = new ProdutoRepositorio();
+        
+        public ProdutoServico() {
+             produtoRepositorio = new ProdutoRepositorio();
         }
 
-        // CRUD
         public void Cadastrar(Produto produto)
         {
             produtoRepositorio.Cadastrar(produto);
         }
 
-        public List<Produto> ObterTodos(string pesquisa)
+        public List<Produto> ObterTodos()
         {
             // Obter a lista de produtos da tabela de produtos
-            var produtos = produtoRepositorio.ObterTodos(pesquisa);
+            var produtos = produtoRepositorio.ObterTodos();
             // Retornar a lista de produtos
             return produtos;
         }
 
         public void Apagar(int id)
         {
+            // Instanciando um objeto da class ProdutoRepositorio
             // Chamar o método Apagar do ProdutoRepositorio(que irá executar o DELETE)
             produtoRepositorio.Apagar(id);
         }
@@ -45,7 +41,7 @@ namespace WindowsFormsExemplos.Servicos
             return produto;
         }
 
-        internal void Editar(Produto produto)
+        public void Editar(Produto produto)
         {
             produtoRepositorio.Editar(produto);
         }

@@ -116,6 +116,7 @@
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
             // CadastroProdutoForm
             // 

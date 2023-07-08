@@ -19,7 +19,6 @@ namespace WindowsFormsExemplos.Forms.Produtos
         public ListagemProdutoForm()
         {
             InitializeComponent();
-
             produtoServico = new ProdutoServico();
         }
 
@@ -28,7 +27,6 @@ namespace WindowsFormsExemplos.Forms.Produtos
             var formulario = new CadastroProdutoForm();
             formulario.Text = "Cadatrar Produto";
             formulario.ShowDialog();
-
             ListarProdutos();
         }
 
@@ -39,12 +37,9 @@ namespace WindowsFormsExemplos.Forms.Produtos
 
         private void ListarProdutos()
         {
-            // Obter o texto que o usuário digitou para filtrar os produtos
-            var pesquisa = textBoxPesquisa.Text.Trim();
-
             // Obter a lista de produtos
-            var produtos = produtoServico.ObterTodos(pesquisa);
-            
+            var produtos = produtoServico.ObterTodos();
+
             // Remover todas as linhas do DataGridView
             dataGridView1.Rows.Clear();
 
@@ -62,6 +57,34 @@ namespace WindowsFormsExemplos.Forms.Produtos
                     produto.Quantidade,
                     produto.PrecoUnitario
                 });
+            }
+        }
+
+        private void ListarProdutos(string filtro)
+        {
+            // Obter a lista de produtos
+            var produtos = produtoServico.ObterTodos();
+
+            // Remover todas as linhas do DataGridView
+            dataGridView1.Rows.Clear();
+
+            // Percorrer a lista dos produtos
+            for (int i = 0; i < produtos.Count; i++)
+            {
+                // Obter o produto iterado
+                var produto = produtos[i];
+
+                if (produto.Nome.ToLower().Contains(filtro.ToLower()))
+                {
+                    // Adicionar linha no dataGridView com as informações
+                    // do produto iterado
+                    dataGridView1.Rows.Add(new object[] {
+                        produto.Id,
+                        produto.Nome,
+                        produto.Quantidade,
+                        produto.PrecoUnitario
+                    });
+                }
             }
         }
 
@@ -88,17 +111,11 @@ namespace WindowsFormsExemplos.Forms.Produtos
 
             var form = new CadastroProdutoForm(produtoEscolhido);
             form.ShowDialog();
-
-            ListarProdutos();
         }
 
-        private void textBoxPesquisa_KeyDown(object sender, KeyEventArgs e)
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
         {
-            // Quando usuário apertar a tecla enter irá filtrar os produtos (buscar no banco de dados)
-            if (e.KeyCode == Keys.Enter)
-            {
-                ListarProdutos();
-            }
+            ListarProdutos(textBoxPesquisa.Text);
         }
     }
 }

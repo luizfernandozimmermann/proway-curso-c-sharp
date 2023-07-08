@@ -5,7 +5,7 @@ namespace WindowsFormsExemplos.Servicos
 {
     internal class ClienteServico
     {
-        private ClienteRepositorio repositorio;
+        private ClienteRepositorio repositorio { get; set; }
 
         public ClienteServico()
         {
@@ -14,7 +14,7 @@ namespace WindowsFormsExemplos.Servicos
 
         public void Cadastrar(Cliente cliente)
         {
-            repositorio.Cadastrar(cliente);
+            repositorio.Cadastrar(cliente); 
         }
 
         public List<Cliente> ObterTodos()

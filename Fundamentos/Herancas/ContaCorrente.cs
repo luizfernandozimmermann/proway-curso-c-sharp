@@ -1,21 +1,19 @@
 ﻿namespace Fundamentos.Herancas
 {
-    // ContaCorrente herda as propriedades/métodos da classe Conta
-    public class ContaCorrente : Conta
+    internal class ContaCorrente : Conta
     {
         public decimal SaldoChequeEspecial { get; set; }
 
-        // Override: uma sobreescrita do método ObterExtrato, ou seja, mudamos o comportamento
-        // do método da classe Pai
         public override string ObterExtrato()
         {
-            // Obtém o extrato da classe pai Conta
-            // base é utilizado para chamar métodos da classe pai, avô
-            var extratoPai = base.ObterExtrato();
-            var extratoFilho = $"Saldo cheque especial: {SaldoChequeEspecial}";
+            var extrato = $"{base.ObterExtrato()}\nSaldo cheque especial: {SaldoChequeEspecial}";
+            
+            return extrato;
+        }
 
-            // Retorna o extrato da classe pai Conta + extrato da ContaCorrente
-            return $"{extratoPai}\n{extratoFilho}";
+        public override decimal CalcularSaldoTotal()
+        {
+            return Saldo + SaldoChequeEspecial;
         }
     }
 }

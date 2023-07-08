@@ -1,4 +1,4 @@
-﻿using Fundamentos.LacoRepeticao;
+﻿using Fundamentos.Sobrecarga;
 
-var executor = new LacoRepeticaoFor();
+var executor = new ExemploCalculadora();
 executor.Executar();
