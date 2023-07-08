@@ -40,7 +40,7 @@ namespace WindowsFormsExemplos.Forms.Pedidos
 
         private void PreencherComboBoxProdutos()
         {
-            var produtos = produtoServico.ObterTodos("");
+            var produtos = produtoServico.ObterTodos();
 
             produtos = produtos.OrderBy(produto => produto.Nome).ToList();
 

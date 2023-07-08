@@ -4,6 +4,9 @@
     <Compile Update="Forms\Clientes\CadastroClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Clientes\CadastroClienteFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Clientes\ListagemClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +20,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pedidos\CadastroPedidoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pedidos\ListagemPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\ProdutoCadastroSimplicadoBancoDadosForm.cs">
